@@ -1,0 +1,26 @@
+body {
+    padding: 0;
+    margin: 0;
+
+    background: #95A7F5;
+
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+h1 {
+    font-size: 22px;
+}
+
+h2 {
+    font-size: 20px;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}

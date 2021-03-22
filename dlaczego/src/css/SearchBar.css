@@ -1,0 +1,27 @@
+.searchBar {
+    height: 4vh;
+    width: 20vw;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    background: #FFFFFF;
+    border-radius: 0 5vw 5vw 0;
+    border: 0;
+    margin: 0;
+    padding-left: 2vw;
+}
+
+.searchBar input {
+    height: 4vh;
+    width: 15vw;
+
+    border: 0;
+    outline: 0;
+}
+
+.searchBar span {
+    cursor: pointer;
+    padding: 0;
+}
