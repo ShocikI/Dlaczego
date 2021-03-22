@@ -6,9 +6,9 @@ import NavLinks from "./NavLinks";
 function NavBar(props) {
     return (
       <>
-        <div class="navigation">
-            <SearchBar></SearchBar>
-            {props.isLogged ? <NavLinks></NavLinks> : null }
+        <div className="navigation">
+            <SearchBar/>
+            {props.isLogged ? <NavLinks/> : null }
         </div>
       </>
     );

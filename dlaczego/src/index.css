@@ -3,9 +3,13 @@ body {
     margin: 0;
 
     background: #95A7F5;
-
+                                        height: 2000px;
     font-family: 'Open Sans', sans-serif;
     font-size: 16px;
+}
+
+.root{
+    height: 2000px;
 }
 
 * {

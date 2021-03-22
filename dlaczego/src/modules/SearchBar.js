@@ -4,10 +4,10 @@ import '../css/SearchBar.css';
 function SearchBar(){
     return (
     <>
-        <div class="searchBar">
-            <input name="search" placeholder="Search..."></input>
+        <div className="searchBar">
+            <input name="search" placeholder="Search..."/>
             <span>
-                <i className="fas fa-search"></i>
+                <i className="fas fa-search"/>
             </span>
         </div>
     </>
