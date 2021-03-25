@@ -1,10 +1,16 @@
 import React from "react";
 import '../css/NavLinks.css';
-
+import { NavLink } from "react-router-dom";
 
 function NavLinks() {
-    const items = ["Home", "Profile", "AddQuestion", "Settings"];
-    const links = items.map(item => <li className="link">{item}</li>);
+    const items = ['home', 'profile', 'addquestion', 'settings'];
+    const links = items.map(item =>
+        <li className="link">
+            <NavLink to="/addquestion">
+                {item}
+            </NavLink>
+        </li>
+    );
 
     return (
         <>

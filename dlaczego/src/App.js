@@ -3,21 +3,21 @@ import './App.css';
 import NavBar from './modules/NavBar'
 import SideBar from './modules/SideBar';
 import Window from './modules/Window';
+import { BrowserRouter } from "react-router-dom";
 
-class App extends React.Component{
+class App extends React.Component {
 
     state = {isLogged: true};
 
     render() {
         return (
-            <div className="App">
-                <NavBar isLogged={this.state.isLogged}>
-                </NavBar>
-                <SideBar isLogged={this.state.isLogged}>
-                </SideBar>
-                <Window>
-                </Window>
-            </div>
+            <BrowserRouter>
+                <div className="App">
+                    <NavBar isLogged={this.state.isLogged}/>
+                    <SideBar isLogged={this.state.isLogged}/>
+                    <Window/>
+                </div>
+            </BrowserRouter>
         );
     }
 }
