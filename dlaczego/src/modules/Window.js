@@ -8,29 +8,31 @@ import WindowProfile from "./WindowProfile";
 import { Route } from "react-router-dom";
 import { Switch } from "react-router-dom";
 
-function Window() {
+function Window(props) {
 
     return (
         <>
             <div className="window">
                 <div className="window_align">
-                    <Switch>
-                        <Route path="/addquestion"
-                               component={WindowAddQuestion}
-                        />
-                        <Route path="/profile"
-                               component={WindowProfile}
-                        />
-                        <Route path="/home"
-                               component={WindowQuestions}
-                        />
-                        <Route path="/settings"
-                               component={WindowSettings}
-                        />
-                        <Route path="/title"
-                               component={WindowTitle}
-                        />
-                    </Switch>
+                    {props.isLogged ?
+                        <Switch>
+                            <Route path="/addquestion"
+                                   component={WindowAddQuestion}
+                            />
+                            <Route path="/profile"
+                                   component={WindowProfile}
+                            />
+                            <Route path="/home"
+                                   component={WindowQuestions}
+                            />
+                            <Route path="/settings"
+                                   component={WindowSettings}
+                            />
+                            <Route path="/title"
+                                   component={WindowTitle}
+                            />
+                        </Switch> :
+                        <WindowQuestions/> }
                 </div>
             </div>
         </>

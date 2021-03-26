@@ -15,7 +15,7 @@ class App extends React.Component {
                 <div className="App">
                     <NavBar isLogged={this.state.isLogged}/>
                     <SideBar isLogged={this.state.isLogged}/>
-                    <Window/>
+                    <Window isLogged={this.state.isLogged}/>
                 </div>
             </BrowserRouter>
         );
