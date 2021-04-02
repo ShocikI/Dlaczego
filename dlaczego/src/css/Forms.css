@@ -35,3 +35,14 @@ form button {
     font-size: 18px;
 }
 
+form textarea {
+    width: 80%;
+    height: 8em;
+    padding: 0.33em 1em;
+    border: 0;
+    border-radius: 3px;
+    outline: 0;
+    margin-bottom: 5px;
+    resize: unset;
+    font-family: 'Open Sans', sans-serif;
+}

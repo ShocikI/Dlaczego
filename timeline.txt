@@ -1,0 +1,8 @@
+23.03– routing, widoki, timeline
+30.03 – baza danych, połączenie z reactem
+5.04 – log_in(), log_out(), rejestracja()
+12.04 – add_question(), add_answer()
+19.04 – change description(), change_password()
+26.04 – search(), kategorie - zakładam ze bede mial kilka pytan, kilka userów
+3.05 – dopieszczanie frontendu
+10.05 – zapas czasu (może dołożenie "smaczków" jak starczy czasu)
