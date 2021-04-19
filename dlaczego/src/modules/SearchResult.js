@@ -1,15 +1,15 @@
 import React from "react";
-import '../css/Categories.css';
+import '../css/SearchResult.css';
 
-function Categories () {
+function SearchResult () {
     // const items = zbiera z bazy kategorie;
-    // const categories = items.map(item => <li className="categories">{item}</li>)
+    // const SearchResult = items.map(item => <li className="SearchResult">{item}</li>)
 
     return (
         <>
-            <h1>Kategorie</h1>
+            <h1>Wynik wyszukiwania</h1>
             {/*<ul>*/}
-            {/*    {categories}*/}
+            {/*    {SearchResult}*/}
             {/*</ul>*/}
             Tu jest nibypołączenie z bazą danych
             Ale tak na prawde to jeszcze nie ma
@@ -23,4 +23,4 @@ function Categories () {
     );
 }
 
-export default Categories;
+export default SearchResult;

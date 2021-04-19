@@ -81,6 +81,14 @@
       <excludeFolder url="file://$MODULE_DIR$/dlaczego-back/vendor/symfony/security-core" />
       <excludeFolder url="file://$MODULE_DIR$/dlaczego-back/vendor/symfony/security-http" />
       <excludeFolder url="file://$MODULE_DIR$/dlaczego-back/vendor/symfony/twig-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/dlaczego-back/vendor/symfony/web-profiler-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/dlaczego-back/vendor/sensio/framework-extra-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/dlaczego-back/vendor/monolog/monolog" />
+      <excludeFolder url="file://$MODULE_DIR$/dlaczego-back/vendor/symfony/monolog-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/dlaczego-back/vendor/symfony/debug-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/dlaczego-back/vendor/symfony/monolog-bridge" />
+      <excludeFolder url="file://$MODULE_DIR$/dlaczego-back/vendor/twig/extra-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/dlaczego-back/vendor/symfony/webpack-encore-bundle" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

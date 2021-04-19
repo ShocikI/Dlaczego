@@ -2,37 +2,32 @@
 
 namespace App\Controller;
 
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 
-class QuestionController
+class QuestionController extends AbstractController
 {
-    // dodaj pytanie
-    public function add_question()
-    {
-        //TODO
-    }
+    // TODO
+    // addQuestion(content, created_at, author)
+    // TODO
+    // deleteQuestion(id)
+    // TODO
+    // getNewestQuestions()
+    // TODO
+    // getSearchedQuestions(frase)
+    // TODO
+    // getQuestionsByUsers(user)
+    // TODO
+    // getQuestionsWithoutAnswers()
+    // TODO
+    // getQuestionWithAnswers(question)
+    // TODO
+    // addLike(question)
+    // TODO
+    // getLike(question)
+    // TODO
+    // addDislike(question)
+    // TODO
+    // getDislike(question)
 
-    // lista ostatnich pytan
-    public function show_last_questions()
-    {
-        //TODO
-    }
-
-    // lista pytan uzytkownika
-    public function show_user_questions()
-    {
-        //TODO
-    }
-
-    // lista pytan bez odpowiedzi
-    public function show_wo_answers_questions()
-    {
-        //TODO
-    }
-
-    // pojedyncze pytanie
-    public function get_questions()
-    {
-        //TODO
-    }
 }

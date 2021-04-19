@@ -1,0 +1,8 @@
+lab5– routing, widoki, timeline
+lab6 – baza danych, połączenie z reactem
+lab7 – log_in(), log_out(), rejestracja()
+lab8 – add_question(), add_answer()
+lab9 – change description(), change_password()
+lab10 – search(), kategorie - zakładam ze bede mial kilka pytan, kilka userów
+lab11 – dopieszczanie frontendu
+lab12 – zapas czasu (może dołożenie "smaczków" jak starczy czasu)

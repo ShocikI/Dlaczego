@@ -2,37 +2,21 @@
 
 namespace App\Controller;
 
+use App\Entity\User;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 
-class SecurityController
+class SecurityController extends AbstractController
 {
-    // dane do wyrenderowania strony profilu
-    public function profil()
-    {
-        //TODO
-    }
-
-    // dane do logowania
-    public function login()
-    {
-        //TODO
-    }
-
-    // wylogowanie
-    public function logout()
-    {
-        //TODO
-    }
-
-    // zmiana hasla
-    public function change_password()
-    {
-        //TODO
-    }
-
-    // dodaj uzytkownika
-    public function add_user()
-    {
-        //TODO
-    }
+    // TODO
+    // addUser(login, email, password, r_password, telnumber)
+    // TODO
+    // getUser(login)
+    // TODO
+    // login(login, password)
+    // TODO
+    // logout(token)
+    // TODO
+    // changePassword(o_pass, n_pass, r_pass)
+    // TODO
 }

@@ -1,4 +1,5 @@
 import React from "react";
+import '../css/Window.css';
 
 function WindowProfile() {
     // const items = pobieram pytania z bazy danych;

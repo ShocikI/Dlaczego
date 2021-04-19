@@ -81,6 +81,14 @@
       <path value="$PROJECT_DIR$/dlaczego-back/vendor/symfony/security-core" />
       <path value="$PROJECT_DIR$/dlaczego-back/vendor/symfony/security-http" />
       <path value="$PROJECT_DIR$/dlaczego-back/vendor/symfony/twig-bundle" />
+      <path value="$PROJECT_DIR$/dlaczego-back/vendor/symfony/web-profiler-bundle" />
+      <path value="$PROJECT_DIR$/dlaczego-back/vendor/sensio/framework-extra-bundle" />
+      <path value="$PROJECT_DIR$/dlaczego-back/vendor/monolog/monolog" />
+      <path value="$PROJECT_DIR$/dlaczego-back/vendor/symfony/monolog-bundle" />
+      <path value="$PROJECT_DIR$/dlaczego-back/vendor/symfony/debug-bundle" />
+      <path value="$PROJECT_DIR$/dlaczego-back/vendor/symfony/monolog-bridge" />
+      <path value="$PROJECT_DIR$/dlaczego-back/vendor/twig/extra-bundle" />
+      <path value="$PROJECT_DIR$/dlaczego-back/vendor/symfony/webpack-encore-bundle" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.0">

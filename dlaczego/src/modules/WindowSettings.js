@@ -1,4 +1,5 @@
 import React from "react";
+import '../css/Window.css';
 
 function WindowSettings() {
 
@@ -34,13 +35,20 @@ function WindowSettings() {
         </form>
     );
 
+    const logout_button = (
+        <form>
+            <h2>Wyloguj</h2>
+            <button type="submit">Wyloguj</button>
+        </form>
+    );
+
     return (
         <>
-          <div className="window_settings">
-              <button type="submit">Wyloguj</button>
-              {change_password}
-              {change_description}
-          </div>
+            <div className="window_settings">
+                {logout_button}
+                {change_password}
+                {change_description}
+            </div>
         </>
     );
 }

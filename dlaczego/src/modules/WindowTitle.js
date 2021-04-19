@@ -1,4 +1,5 @@
 import React from "react";
+import '../css/Window.css';
 
 function WindowTitle() {
     const title_box = (
