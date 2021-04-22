@@ -47,4 +47,14 @@ class UserDetailsRepository extends ServiceEntityRepository
         ;
     }
     */
+    // TODO
+    // changeDescription(new_desc)
+    // TODO
+    // addLikes(user)
+    // TODO
+    // getLikes(user)
+    // TODO
+    // addDislike(user)
+    // TODO
+    // getDislike(user)
 }

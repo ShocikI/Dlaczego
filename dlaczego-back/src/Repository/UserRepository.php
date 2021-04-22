@@ -47,4 +47,11 @@ class UserRepository extends ServiceEntityRepository
         ;
     }
     */
+
+    // TODO
+    // addUser(login, email, password, r_password, telnumber)
+    // TODO
+    // getUser(login)
+    // TODO
+    // changePassword(o_pass, n_pass, r_pass)
 }

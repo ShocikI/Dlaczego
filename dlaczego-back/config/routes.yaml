@@ -7,7 +7,7 @@ addQuestion:
     controller: App\Controller\DefaultController::addquestion
 
 profile:
-    path: /profile/{account}
+    path: /profile/{user}
     controller: App\Controller\DefaultController::profile
 
 settings:
@@ -15,5 +15,5 @@ settings:
     controller: App\Controller\DefaultController::settings
 
 title:
-    path: /title/{anyquestion}
+    path: /title/{question}
     controller: App\Controller\DefaultController::title

@@ -47,4 +47,27 @@ class QuestionRepository extends ServiceEntityRepository
         ;
     }
     */
+
+    // TODO
+    // addQuestion(content, created_at, author)
+    // TODO
+    // deleteQuestion(id)
+    // TODO
+    // getNewestQuestions()
+    // TODO
+    // getSearchedQuestions(frase)
+    // TODO
+    // getQuestionsByUsers(user)
+    // TODO
+    // getQuestionsWithoutAnswers()
+    // TODO
+    // getQuestionWithAnswers(question)
+    // TODO
+    // addLike(question)
+    // TODO
+    // getLike(question)
+    // TODO
+    // addDislike(question)
+    // TODO
+    // getDislike(question)
 }

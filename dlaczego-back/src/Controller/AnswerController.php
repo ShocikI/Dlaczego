@@ -8,16 +8,11 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class AnswerController extends AbstractController
 {
-    // TODO
-    // addAnswer(content, author, created_at)
-    // TODO
-    // deleteAnswer(id)
-    // TODO
-    // addLike(answer)
-    // TODO
-    // getLike(answer)
-    // TODO
-    // addDislike(answer)
-    // TODO
-    // getDislike(answer)
+
+    public function index(): Response
+    {
+        return $this->render('answer/index.html.twig', [
+            'controller_name' => 'AnswerController',
+        ]);
+    }
 }

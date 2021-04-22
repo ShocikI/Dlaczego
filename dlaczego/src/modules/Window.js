@@ -22,7 +22,7 @@ function Window(props) {
                             <Route path="/profile"
                                    component={WindowProfile}
                             />
-                            <Route path="/home"
+                            <Route path="/"
                                    component={WindowQuestions}
                             />
                             <Route path="/settings"

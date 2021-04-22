@@ -47,4 +47,17 @@ class AnswerRepository extends ServiceEntityRepository
         ;
     }
     */
+
+    // TODO
+    // addAnswer(content, author, created_at)
+    // TODO
+    // deleteAnswer(id)
+    // TODO
+    // addLike(answer)
+    // TODO
+    // getLike(answer)
+    // TODO
+    // addDislike(answer)
+    // TODO
+    // getDislike(answer)
 }

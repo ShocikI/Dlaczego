@@ -4,30 +4,15 @@ namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Annotation\Route;
 
 class QuestionController extends AbstractController
 {
-    // TODO
-    // addQuestion(content, created_at, author)
-    // TODO
-    // deleteQuestion(id)
-    // TODO
-    // getNewestQuestions()
-    // TODO
-    // getSearchedQuestions(frase)
-    // TODO
-    // getQuestionsByUsers(user)
-    // TODO
-    // getQuestionsWithoutAnswers()
-    // TODO
-    // getQuestionWithAnswers(question)
-    // TODO
-    // addLike(question)
-    // TODO
-    // getLike(question)
-    // TODO
-    // addDislike(question)
-    // TODO
-    // getDislike(question)
 
+    public function index(): Response
+    {
+        return $this->render('question/index.html.twig', [
+            'controller_name' => 'QuestionController',
+        ]);
+    }
 }
