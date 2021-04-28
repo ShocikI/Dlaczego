@@ -7,7 +7,7 @@ function NavLinks() {
         <>
             <ul className="nav_links">
                 <li className="link">
-                    <NavLink to="/home">
+                    <NavLink to="/">
                         Home
                     </NavLink>
                 </li>
