@@ -93,7 +93,7 @@
       <path value="$PROJECT_DIR$/dlaczego-back/vendor/symfony/uid" />
     </include_path>
   </component>
-  <component name="PhpProjectSharedConfiguration" php_language_level="8.0">
+  <component name="PhpProjectSharedConfiguration" php_language_level="7.4">
     <option name="suggestChangeDefaultLanguageLevel" value="false" />
   </component>
 </project>

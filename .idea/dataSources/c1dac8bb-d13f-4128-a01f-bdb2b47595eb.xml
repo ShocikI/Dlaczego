@@ -785,18 +785,17 @@ false Z
 false Zulu
 true posixrules
 </TimeZones>
-      <StartupTime>1619723794</StartupTime>
+      <StartupTime>1619783068</StartupTime>
     </root>
     <database id="2" parent="1" name="forum_dlaczego">
       <ObjectId>16384</ObjectId>
       <Owner>Shocik</Owner>
-      <IntrospectionStateNumber>582</IntrospectionStateNumber>
+      <IntrospectionStateNumber>601</IntrospectionStateNumber>
     </database>
     <database id="3" parent="1" name="postgres">
       <ObjectId>13148</ObjectId>
       <Comment>default administrative connection database</Comment>
       <Owner>Shocik</Owner>
-      <IntrospectionStateNumber>574</IntrospectionStateNumber>
       <Current>1</Current>
     </database>
     <role id="4" parent="1" name="Shocik">
@@ -867,7 +866,7 @@ UC/10
 </Acl>
       <StateNumber>360</StateNumber>
       <Owner>Shocik</Owner>
-      <IntrospectionStateNumber>583</IntrospectionStateNumber>
+      <IntrospectionStateNumber>602</IntrospectionStateNumber>
       <Current>1</Current>
     </schema>
     <extension id="18" parent="2" name="plpgsql">
@@ -967,7 +966,6 @@ U/10
 </Acl>
       <StateNumber>366</StateNumber>
       <Owner>Shocik</Owner>
-      <IntrospectionStateNumber>575</IntrospectionStateNumber>
     </schema>
     <schema id="30" parent="3" name="pg_catalog">
       <ObjectId>11</ObjectId>
@@ -977,7 +975,6 @@ U/10
 </Acl>
       <StateNumber>359</StateNumber>
       <Owner>Shocik</Owner>
-      <IntrospectionStateNumber>576</IntrospectionStateNumber>
     </schema>
     <schema id="31" parent="3" name="public">
       <ObjectId>2200</ObjectId>
@@ -987,7 +984,6 @@ UC/10
 </Acl>
       <StateNumber>360</StateNumber>
       <Owner>Shocik</Owner>
-      <IntrospectionStateNumber>577</IntrospectionStateNumber>
       <Current>1</Current>
     </schema>
     <extension id="32" parent="3" name="plpgsql">
@@ -60805,14 +60801,16 @@ rw/10
       <Position>6</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>571</StateNumber>
+      <StateNumber>590</StateNumber>
+      <DefaultExpression>0</DefaultExpression>
       <TypeId>23</TypeId>
     </column>
     <column id="5102" parent="47" name="dislikes">
       <Position>7</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>571</StateNumber>
+      <StateNumber>591</StateNumber>
+      <DefaultExpression>0</DefaultExpression>
       <TypeId>23</TypeId>
     </column>
     <index id="5103" parent="47" name="answer_pkey">
@@ -60938,14 +60936,16 @@ rw/10
       <Position>5</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>571</StateNumber>
+      <StateNumber>594</StateNumber>
+      <DefaultExpression>0</DefaultExpression>
       <TypeId>23</TypeId>
     </column>
     <column id="5119" parent="49" name="dislikes">
       <Position>6</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>571</StateNumber>
+      <StateNumber>595</StateNumber>
+      <DefaultExpression>0</DefaultExpression>
       <TypeId>23</TypeId>
     </column>
     <index id="5120" parent="49" name="question_pkey">
@@ -61060,7 +61060,8 @@ rw/10
       <Position>4</Position>
       <DataType>boolean|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>571</StateNumber>
+      <StateNumber>598</StateNumber>
+      <DefaultExpression>false</DefaultExpression>
       <TypeId>16</TypeId>
     </column>
     <column id="5135" parent="51" name="description">
@@ -61073,14 +61074,16 @@ rw/10
       <Position>6</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>571</StateNumber>
+      <StateNumber>599</StateNumber>
+      <DefaultExpression>0</DefaultExpression>
       <TypeId>23</TypeId>
     </column>
     <column id="5137" parent="51" name="dislikes">
       <Position>7</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>571</StateNumber>
+      <StateNumber>600</StateNumber>
+      <DefaultExpression>0</DefaultExpression>
       <TypeId>23</TypeId>
     </column>
     <index id="5138" parent="51" name="user_details_pkey">

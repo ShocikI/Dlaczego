@@ -8,7 +8,7 @@ function NavBar(props) {
       <>
         <div className="navigation">
             <SearchBar/>
-            {props.isLogged ? <NavLinks/> : null }
+            {(props.isLogged) ? <NavLinks/> : null }
         </div>
       </>
     );

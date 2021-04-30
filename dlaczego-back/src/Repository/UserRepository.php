@@ -20,38 +20,6 @@ class UserRepository extends ServiceEntityRepository
         parent::__construct($registry, User::class);
     }
 
-    public function addUser(User $user): bool
-    {
-        $conn = $this->getEntityManager()->getConnection();
-        $date = DateTime();
-        $stmt = $conn->prepare('
-            INSERT INTO user (email, login, password, telnumber)
-            VALUES (?, ?, ?, ?);
-        ');
-        try {
-            $stmt->execute([
-                $user->getEmail(),
-                $user->getLogin(),
-                $user->getPassword(),
-                $user->getTelnumber()
-            ]);
-        } catch (Exception $e) {
-        }
-
-        $datestmt = $conn->prepare('
-            INSERT INTO userdetails (created_at)
-            VALUES (?);
-        ');
-        try {
-            $datestmt->execute([
-                $date
-            ]);
-        } catch (Exception $e) {
-        }
-
-        return ($stmt && $datestmt);
-    }
-
     // /**
     //  * @return User[] Returns an array of User objects
     //  */

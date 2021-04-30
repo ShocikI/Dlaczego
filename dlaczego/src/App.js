@@ -8,7 +8,21 @@ import { BrowserRouter } from "react-router-dom";
 
 class App extends React.Component {
 
-    state = {isLogged: true};
+    state = {
+        data: [],
+        isLogged: false
+    };
+
+    async componentDidMount()
+    {
+        try {
+            const res = await axios.get('https://localhost:8000/')
+            console.log(res);
+            this.setState({res})
+        } catch (err){
+            console.log(err);
+        }
+    }
 
     render() {
         return (

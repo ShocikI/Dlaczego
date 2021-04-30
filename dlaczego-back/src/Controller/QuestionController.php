@@ -9,12 +9,35 @@ use Symfony\Component\Routing\Annotation\Route;
 class QuestionController extends AbstractController
 {
     /**
-     * @Route("/question", name="question")
+     * @Route("/addQuestion", name="newQuestion", methods{"POST"})
      */
-    public function index(): Response
-    {
-        return $this->render('question/index.html.twig', [
-            'controller_name' => 'QuestionController',
-        ]);
-    }
+//    public function newQuestions()
+//    {
+//        // TODO
+//    }
+
+    /**
+     * @Route("/{question_id}", name="deleteQuestion", methods{"DELETE"})
+     */
+//    public function deleteQuestion($question_id)
+//    {
+//        // TODO
+//    }
+
+    /**
+     * @Route("/{question_id}, name="giveLike", methods{""})
+     */
+//    public function giveLike($question_id)
+//    {
+//        // TODO
+//    }
+
+    /**
+     * @Route("/{question_id}, name="giveDislike", methods{""})
+     */
+//    public function giveDislike($question_id)
+//    {
+//        // TODO
+//    }
+
 }

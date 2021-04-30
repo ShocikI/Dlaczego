@@ -2,6 +2,10 @@
 
 namespace App\Controller;
 
+use App\Entity\Question;
+use App\Entity\User;
+use App\Repository\QuestionRepository;
+use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -9,51 +13,50 @@ use Symfony\Component\Routing\Annotation\Route;
 class DefaultController extends AbstractController
 {
     /**
-     * @Route("/", name="home")
+     * @Route("/", name="home", methods={"GET"})
      */
     public function home()
     {
-        return $this->render('default/index.html.twig', [
-            'controller_name' => 'DefaultController',
+        $questions = new Question();
+        $questions->setContent('Dlaczego mi nie dziala?');
+
+        return $this->json([
+            "content: " . $questions->getContent(),
+            "likes: " . "0",
+            "dislikes: " . "0"
         ]);
     }
+
     /**
-     * @Route("/settings", name="settings")
+     * @Route("/settings", name="settings", methods={"GET"})
      */
     public function settings()
     {
-        return $this->render('default/index.html.twig', [
-            'controller_name' => 'DefaultController',
-        ]);
+        // TODO
     }
-    /**
-     * @Route("/profile/{user}", name="profile")
-     */
-//    public function profile(User &user)
-//    {
-//        return $this->render('default/index.html.twig', [
-//            'controller_name' => 'DefaultController',
-//        ]);
-//    }
-//
-//    /**
-//     * @Route("/{question_id}", name="question")
-//     */
-//    public function question(Question $questionn)
-//    {
-//        return $this->render('default/index.html.twig', [
-//            'controller_name' => 'DefaultController',
-//        ]);
-//    }
 
     /**
-     * @Route("/addQuestion", name="addQuestion")
+     * @Route("/profile/{user}", name="profile", methods={"GET"})
      */
-    public function addQuestion(): Response
+    public function profile()
     {
-        return $this->render('default/index.html.twig', [
-            'controller_name' => 'DefaultController',
-        ]);
+        // TODO
+    }
+
+    /**
+     * @Route("/{question_id}", name="question", methods={"GET"})
+     */
+    public function question()
+    {
+        // TODO
+    }
+
+    /**
+     * @Route("/addQuestion", name="addQuestion", methods={"GET"})
+     */
+    public function addQuestion()
+    {
+        // TODO
     }
 
 }
