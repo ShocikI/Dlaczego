@@ -89,6 +89,8 @@
       <excludeFolder url="file://$MODULE_DIR$/dlaczego-back/vendor/symfony/monolog-bridge" />
       <excludeFolder url="file://$MODULE_DIR$/dlaczego-back/vendor/twig/extra-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/dlaczego-back/vendor/symfony/webpack-encore-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/dlaczego-back/vendor/symfony/polyfill-uuid" />
+      <excludeFolder url="file://$MODULE_DIR$/dlaczego-back/vendor/symfony/uid" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

@@ -38,6 +38,10 @@ function Forms () {
                    placeholder="Repeat password"
                    type="password"
             />
+            <input name="telnumber"
+                   placeholder="Telephone number"
+                   type="text"
+            />
             <button type="submit">
                 Zatwierdź
             </button>

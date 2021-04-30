@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 import './App.css';
 import NavBar from './modules/NavBar'
 import SideBar from './modules/SideBar';

@@ -6,4 +6,6 @@ services:
       POSTGRES_USER: Shocik
       POSTGRES_PASSWORD: admin
       POSTGRES_DB: forum_dlaczego
-    ports: [5432]
+    ports:
+      - "5432:5432"
+
