@@ -8,13 +8,13 @@ import WindowProfile from "./WindowProfile";
 import { Route } from "react-router-dom";
 import { Switch } from "react-router-dom";
 
-function Window(props) {
+function Window({data, isLogged}) {
 
     return (
         <>
             <div className="window">
                 <div className="window_align">
-                    {props.isLogged ?
+                    {isLogged ?
                         <Switch>
                             <Route path="/addquestion"
                                    component={WindowAddQuestion}
@@ -32,7 +32,7 @@ function Window(props) {
                                    component={WindowTitle}
                             />
                         </Switch> :
-                        <WindowQuestions/> }
+                        <WindowQuestions data={data}/> }
                 </div>
             </div>
         </>

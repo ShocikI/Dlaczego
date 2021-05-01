@@ -1,9 +1,7 @@
 import React from "react";
 import '../css/SearchResult.css';
 
-function SearchResult () {
-    // const items = zbiera z bazy kategorie;
-    // const SearchResult = items.map(item => <li className="SearchResult">{item}</li>)
+function SearchResult() {
 
     return (
         <>
@@ -21,6 +19,7 @@ function SearchResult () {
             <li>że jakieś kategorie ogólnie</li>
         </>
     );
+
 }
 
 export default SearchResult;

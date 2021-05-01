@@ -19,11 +19,13 @@ class DefaultController extends AbstractController
     {
         $questions = new Question();
         $questions->setContent('Dlaczego mi nie dziala?');
+        $questions->setLikes(0);
+        $questions->setDislikes(0);
 
         return $this->json([
-            "content: " . $questions->getContent(),
-            "likes: " . "0",
-            "dislikes: " . "0"
+            $questions->getContent(),
+            $questions->getLikes(),
+            $questions->getDislikes(),
         ]);
     }
 

@@ -17,8 +17,7 @@ class App extends React.Component {
     {
         try {
             const res = await axios.get('https://localhost:8000/')
-            console.log(res);
-            this.setState({res})
+            this.setState({data: res.data})
         } catch (err){
             console.log(err);
         }
@@ -30,7 +29,8 @@ class App extends React.Component {
                 <div className="App">
                     <NavBar isLogged={this.state.isLogged}/>
                     <SideBar isLogged={this.state.isLogged}/>
-                    <Window isLogged={this.state.isLogged}/>
+                    <Window data={this.state.data}
+                            isLogged={this.state.isLogged}/>
                 </div>
             </BrowserRouter>
         );

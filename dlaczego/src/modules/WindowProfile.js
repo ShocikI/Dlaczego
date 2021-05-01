@@ -2,8 +2,6 @@ import React from "react";
 import '../css/Window.css';
 
 function WindowProfile() {
-    // const items = pobieram pytania z bazy danych;
-    // const questions = items.map(item => <li className="questions">{item}</li>);
 
     return (
         <>
@@ -17,6 +15,7 @@ function WindowProfile() {
             </div>
         </>
     );
+
 }
 
 export default WindowProfile;
