@@ -1,0 +1,24 @@
+@import "../../../../assets/styles/colors"
+@import "../../../../assets/styles/font"
+@import "../../../../assets/styles/border"
+
+.standard
+  width: 80%
+  height: 8rem
+  padding: 0.33rem 1rem
+  border: 0
+  border-radius: $small-radius
+  outline: 0
+  margin-bottom: 0.25rem
+  resize: vertical
+  font-family: $openSans
+  font-size: 0.6rem
+  background: $white
+  color: $tblack
+
+  &:focus
+    background: $white-hover
+    border: $background solid $small-border
+
+  &::placeholder
+    color: $placeholder
