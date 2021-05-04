@@ -39,15 +39,14 @@ class Answer
 
     /**
      * @ORM\ManyToOne(targetEntity=Question::class, inversedBy="answers")
-     * @ORM\JoinColumn(nullable=false)
      */
-    private $questionID;
+    private $questionId;
 
     /**
      * @ORM\ManyToOne(targetEntity=User::class, inversedBy="answers")
      * @ORM\JoinColumn(nullable=false)
      */
-    private $userID;
+    private $userId;
 
     public function getId(): ?int
     {
@@ -102,26 +101,26 @@ class Answer
         return $this;
     }
 
-    public function getQuestionID(): ?question
+    public function getQuestionId(): ?Question
     {
-        return $this->questionID;
+        return $this->questionId;
     }
 
-    public function setQuestionID(?question $questionID): self
+    public function setQuestionId(?Question $questionId): self
     {
-        $this->questionID = $questionID;
+        $this->questionId = $questionId;
 
         return $this;
     }
 
-    public function getUserID(): ?user
+    public function getUserId(): ?User
     {
-        return $this->userID;
+        return $this->userId;
     }
 
-    public function setUserID(?user $userID): self
+    public function setUserId(?User $userId): self
     {
-        $this->userID = $userID;
+        $this->userId = $userId;
 
         return $this;
     }

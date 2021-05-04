@@ -21,12 +21,12 @@ class User
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=64)
+     * @ORM\Column(type="string", length=255)
      */
     private $login;
 
     /**
-     * @ORM\Column(type="string", length=128)
+     * @ORM\Column(type="string", length=255)
      */
     private $password;
 
@@ -41,17 +41,23 @@ class User
     private $telnumber;
 
     /**
-     * @ORM\OneToMany(targetEntity=Question::class, mappedBy="userID", orphanRemoval=true)
+     * @ORM\OneToMany(targetEntity=UserDetails::class, mappedBy="userId")
+     */
+    private $userDetails;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Question::class, mappedBy="userId")
      */
     private $questions;
 
     /**
-     * @ORM\OneToMany(targetEntity=Answer::class, mappedBy="userID", orphanRemoval=true)
+     * @ORM\OneToMany(targetEntity=Answer::class, mappedBy="userId")
      */
     private $answers;
 
     public function __construct()
     {
+        $this->userDetails = new ArrayCollection();
         $this->questions = new ArrayCollection();
         $this->answers = new ArrayCollection();
     }
@@ -110,6 +116,36 @@ class User
     }
 
     /**
+     * @return Collection|UserDetails[]
+     */
+    public function getUserDetails(): Collection
+    {
+        return $this->userDetails;
+    }
+
+    public function addUserDetail(UserDetails $userDetail): self
+    {
+        if (!$this->userDetails->contains($userDetail)) {
+            $this->userDetails[] = $userDetail;
+            $userDetail->setUserId($this);
+        }
+
+        return $this;
+    }
+
+    public function removeUserDetail(UserDetails $userDetail): self
+    {
+        if ($this->userDetails->removeElement($userDetail)) {
+            // set the owning side to null (unless already changed)
+            if ($userDetail->getUserId() === $this) {
+                $userDetail->setUserId(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
      * @return Collection|Question[]
      */
     public function getQuestions(): Collection
@@ -121,7 +157,7 @@ class User
     {
         if (!$this->questions->contains($question)) {
             $this->questions[] = $question;
-            $question->setUserID($this);
+            $question->setUserId($this);
         }
 
         return $this;
@@ -131,8 +167,8 @@ class User
     {
         if ($this->questions->removeElement($question)) {
             // set the owning side to null (unless already changed)
-            if ($question->getUserID() === $this) {
-                $question->setUserID(null);
+            if ($question->getUserId() === $this) {
+                $question->setUserId(null);
             }
         }
 
@@ -151,7 +187,7 @@ class User
     {
         if (!$this->answers->contains($answer)) {
             $this->answers[] = $answer;
-            $answer->setUserID($this);
+            $answer->setUserId($this);
         }
 
         return $this;
@@ -161,8 +197,8 @@ class User
     {
         if ($this->answers->removeElement($answer)) {
             // set the owning side to null (unless already changed)
-            if ($answer->getUserID() === $this) {
-                $answer->setUserID(null);
+            if ($answer->getUserId() === $this) {
+                $answer->setUserId(null);
             }
         }
 

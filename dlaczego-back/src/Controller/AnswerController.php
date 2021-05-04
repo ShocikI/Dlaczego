@@ -8,16 +8,36 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class AnswerController extends AbstractController
 {
-    // TODO
-    // addAnswer(content, author, created_at)
-    // TODO
-    // deleteAnswer(id)
-    // TODO
-    // addLike(answer)
-    // TODO
-    // getLike(answer)
-    // TODO
-    // addDislike(answer)
-    // TODO
-    // getDislike(answer)
+
+    /**
+     * @Route("/{question_id}", name="newAnswer", methods={"POST"})
+     */
+//    public function newAnswer($question_id)
+//    {
+//        // TODO
+//    }
+
+    /**
+     * @Route("/{question_id}", name="deleteAnswer", methods={"DELETE"})
+     */
+//    public function deleteAnswer($question_id)
+//    {
+//        // TODO
+//    }
+
+    /**
+     * @Route("/{question_id}, name="giveLike", methods{""})
+     */
+//    public function giveLike($question_id, $answer_id)
+//    {
+//        // TODO
+//    }
+
+    /**
+     * @Route("/{question_id}, name="giveDislike", methods{""})
+     */
+//    public function giveDislike($question_id, $answer_id)
+//    {
+//        // TODO
+//    }
 }

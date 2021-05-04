@@ -1,0 +1,41 @@
+@import '../../../assets/styles/colors'
+@import '../../../assets/styles/border'
+
+.standard
+  display: flex
+  flex-direction: row
+  justify-content: space-between
+  width: 100%
+  align-content: center
+  flex-wrap: nowrap
+  align-items: stretch
+
+  div
+    display: flex
+    flex-direction: column
+    justify-content: flex-start
+    align-items: flex-start
+    color: $twhite
+    border-top: $small-border $twhite solid
+    border-bottom: $small-border $twhite solid
+    height: inherit
+    margin-bottom: 0.3rem
+
+  .user
+    width: 35%
+
+  .content
+    width: 60%
+
+  div
+    padding: 0.2rem 0 0.2rem 0.2rem
+
+    h1
+      font-size: 0.7rem
+      font-weight: 500
+
+    h2
+      font-size: 0.7rem
+      font-weight: 400
+
+

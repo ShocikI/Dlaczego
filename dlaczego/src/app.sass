@@ -1,0 +1,53 @@
+@import './assets/styles/colors'
+@import "./assets/styles/font"
+
+*, *:before, *:after
+  margin: 0
+  border: 0
+  padding: 0
+  box-sizing: border-box
+
+body
+  background-color: $background
+  width: 100%
+  height: 100%
+  font-size: 20px
+
+.App
+  display: grid
+  grid-template-columns: 1fr 3.75fr
+  grid-template-rows: 2.5rem 1fr
+
+  .SearchBarImitation
+    grid-column-start: 1
+    grid-row-start: 1
+    width: 1px
+    height: 1px
+
+  .NavBarImitation
+    grid-column-start: 2
+    grid-row-start: 1
+    width: 1px
+    height: 1px
+
+  .SideBarImitation
+    grid-column-start: 1
+    grid-row-start: 2
+    width: 1px
+    height: 1px
+
+  .Window
+    grid-column-start: 2
+    grid-row-start: 2
+
+#root
+  width: 100%
+  height: 2000px
+  font-family: $poppins
+
+a
+  cursor: pointer
+  text-decoration: none
+
+button
+  cursor: pointer

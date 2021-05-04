@@ -4,56 +4,61 @@ namespace App\Controller;
 
 use App\Entity\Question;
 use App\Entity\User;
+use App\Repository\QuestionRepository;
+use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Annotation\Route;
 
 class DefaultController extends AbstractController
 {
-    public function home(User $user): Response
+    /**
+     * @Route("/", name="home", methods={"GET"})
+     */
+    public function home()
     {
-        $this->isLogged($user);
+        $questions = new Question();
+        $questions->setContent('Dlaczego mi nie dziala?');
+        $questions->setLikes(0);
+        $questions->setDislikes(0);
 
-        return $this->render('default/index.html.twig', [
-
+        return $this->json([
+            $questions->getContent(),
+            $questions->getLikes(),
+            $questions->getDislikes(),
         ]);
     }
 
-    public function settings(): Response
+    /**
+     * @Route("/settings", name="settings", methods={"GET"})
+     */
+    public function settings()
     {
-        return $this->render('settings/index.html.twig', [
-
-        ]);
+        // TODO
     }
 
-    public function addquestion(User $user): Response
+    /**
+     * @Route("/profile/{user}", name="profile", methods={"GET"})
+     */
+    public function profile()
     {
-        $this->isLogged($user);
-
-        return $this->render('addquestion/index.html.twig', []);
+        // TODO
     }
 
-    public function profile(User $user): Response
+    /**
+     * @Route("/{question_id}", name="question", methods={"GET"})
+     */
+    public function question()
     {
-        $this->isLogged($user);
-
-        return $this->render('profile/index.html.twig', [
-
-        ]);
+        // TODO
     }
 
-    public function title(): Response
+    /**
+     * @Route("/addQuestion", name="addQuestion", methods={"GET"})
+     */
+    public function addQuestion()
     {
-        return $this->render('title/index.html.twig', [
-
-            ]);
+        // TODO
     }
 
-    public function isLogged(User $user): ? Response {
-        if(!isset($user)) {
-            return $this->render('default/index.html.twig', [
-                'message' => 'Nie jesteś zalogowany'
-//                'questions' => questionRepo.getNewestQuestions()
-            ]);
-        }
-    }
 }

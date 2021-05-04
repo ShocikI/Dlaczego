@@ -18,14 +18,14 @@ class UserDetails
     private $id;
 
     /**
-     * @ORM\Column(type="boolean")
-     */
-    private $role;
-
-    /**
      * @ORM\Column(type="datetime")
      */
     private $created_at;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $admin;
 
     /**
      * @ORM\Column(type="text", nullable=true)
@@ -43,26 +43,14 @@ class UserDetails
     private $dislikes;
 
     /**
-     * @ORM\OneToOne(targetEntity=User::class, cascade={"persist", "remove"})
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="userDetails")
      * @ORM\JoinColumn(nullable=false)
      */
-    private $userID;
+    private $userId;
 
     public function getId(): ?int
     {
         return $this->id;
-    }
-
-    public function getRole(): ?bool
-    {
-        return $this->role;
-    }
-
-    public function setRole(bool $role): self
-    {
-        $this->role = $role;
-
-        return $this;
     }
 
     public function getCreatedAt(): ?\DateTimeInterface
@@ -73,6 +61,18 @@ class UserDetails
     public function setCreatedAt(\DateTimeInterface $created_at): self
     {
         $this->created_at = $created_at;
+
+        return $this;
+    }
+
+    public function getAdmin(): ?bool
+    {
+        return $this->admin;
+    }
+
+    public function setAdmin(bool $admin): self
+    {
+        $this->admin = $admin;
 
         return $this;
     }
@@ -113,14 +113,14 @@ class UserDetails
         return $this;
     }
 
-    public function getUserID(): ?user
+    public function getUserId(): ?User
     {
-        return $this->userID;
+        return $this->userId;
     }
 
-    public function setUserID(user $userID): self
+    public function setUserId(?User $userId): self
     {
-        $this->userID = $userID;
+        $this->userId = $userId;
 
         return $this;
     }

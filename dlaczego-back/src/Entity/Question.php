@@ -43,10 +43,10 @@ class Question
      * @ORM\ManyToOne(targetEntity=User::class, inversedBy="questions")
      * @ORM\JoinColumn(nullable=false)
      */
-    private $userID;
+    private $userId;
 
     /**
-     * @ORM\OneToMany(targetEntity=Answer::class, mappedBy="questionID", orphanRemoval=true)
+     * @ORM\OneToMany(targetEntity=Answer::class, mappedBy="questionId")
      */
     private $answers;
 
@@ -108,14 +108,14 @@ class Question
         return $this;
     }
 
-    public function getUserID(): ?user
+    public function getUserId(): ?User
     {
-        return $this->userID;
+        return $this->userId;
     }
 
-    public function setUserID(?user $userID): self
+    public function setUserId(?User $userId): self
     {
-        $this->userID = $userID;
+        $this->userId = $userId;
 
         return $this;
     }
@@ -132,7 +132,7 @@ class Question
     {
         if (!$this->answers->contains($answer)) {
             $this->answers[] = $answer;
-            $answer->setQuestionID($this);
+            $answer->setQuestionId($this);
         }
 
         return $this;
@@ -142,8 +142,8 @@ class Question
     {
         if ($this->answers->removeElement($answer)) {
             // set the owning side to null (unless already changed)
-            if ($answer->getQuestionID() === $this) {
-                $answer->setQuestionID(null);
+            if ($answer->getQuestionId() === $this) {
+                $answer->setQuestionId(null);
             }
         }
 
