@@ -14,6 +14,7 @@ class SearchBar extends React.Component {
             <div className={styles.standard}>
                 <form>
                     <Input
+                        name={"phrase"}
                         placeholder={"Szukaj"}
                         maxLength={1000}
                         />

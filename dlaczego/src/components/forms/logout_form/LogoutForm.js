@@ -13,7 +13,7 @@ class LogoutForm extends React.Component {
         return(
             <form className={styles.standard}>
                 <h2>Wyloguj się</h2>
-                <Button onClick={this.logout()}/>
+                <Button onClick={() => {this.logout()}}/>
             </form>
         )
     }

@@ -12,13 +12,14 @@ class ChangeDescriptionForm extends React.Component {
 
     render() {
         return (
-            <form className={styles.standard}>
+            <form className={styles.standard}
+                  onSubmit={this.changeDescription}>
                 <h2>Zmień opis</h2>
                 <Textarea
                     placeholder="Napisz coś o sobie."
                     rows={5}
                 />
-                <Button onClick={this.changeDescription()}/>
+                <Button type="submit"/>
             </form>
         )
     }

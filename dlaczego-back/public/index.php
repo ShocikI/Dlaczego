@@ -16,6 +16,7 @@ if ($method == "OPTIONS") {
     die();
 }
 
+
 (new Dotenv())->bootEnv(dirname(__DIR__).'/.env');
 
 if ($_SERVER['APP_DEBUG']) {
