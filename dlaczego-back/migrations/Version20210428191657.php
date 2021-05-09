@@ -27,9 +27,9 @@ final class Version20210428191657 extends AbstractMigration
         $this->addSql('CREATE TABLE answer (id INT NOT NULL, question_id_id INT DEFAULT NULL, user_id_id INT NOT NULL, content TEXT NOT NULL, created_at TIMESTAMP(0) WITHOUT TIME ZONE NOT NULL, likes INT NOT NULL, dislikes INT NOT NULL, PRIMARY KEY(id))');
         $this->addSql('CREATE INDEX IDX_DADD4A254FAF8F53 ON answer (question_id_id)');
         $this->addSql('CREATE INDEX IDX_DADD4A259D86650F ON answer (user_id_id)');
-        $this->addSql('CREATE TABLE question (id INT NOT NULL, user_id_id INT NOT NULL, content TEXT NOT NULL, created_at TIMESTAMP(0) WITHOUT TIME ZONE NOT NULL, likes INT NOT NULL, dislikes INT NOT NULL, PRIMARY KEY(id))');
+        $this->addSql('CREATE TABLE question (id INT NOT NULL, user_id_id INT NOT NULL, content TEXT NOT NULL UNIQUE, created_at TIMESTAMP(0) WITHOUT TIME ZONE NOT NULL, likes INT NOT NULL, dislikes INT NOT NULL, PRIMARY KEY(id))');
         $this->addSql('CREATE INDEX IDX_B6F7494E9D86650F ON question (user_id_id)');
-        $this->addSql('CREATE TABLE "user" (id INT NOT NULL, login VARCHAR(255) NOT NULL, password VARCHAR(255) NOT NULL, email VARCHAR(255) NOT NULL, telnumber VARCHAR(9) NOT NULL, PRIMARY KEY(id))');
+        $this->addSql('CREATE TABLE "user" (id INT NOT NULL, login VARCHAR(255) NOT NULL UNIQUE, password VARCHAR(255) NOT NULL, email VARCHAR(255) NOT NULL UNIQUE, telnumber VARCHAR(9) NOT NULL UNIQUE, PRIMARY KEY(id))');
         $this->addSql('CREATE TABLE user_details (id INT NOT NULL, user_id_id INT NOT NULL, created_at TIMESTAMP(0) WITHOUT TIME ZONE NOT NULL, admin BOOLEAN NOT NULL, description TEXT DEFAULT NULL, likes INT NOT NULL, dislikes INT NOT NULL, PRIMARY KEY(id))');
         $this->addSql('CREATE INDEX IDX_2A2B15809D86650F ON user_details (user_id_id)');
         $this->addSql('ALTER TABLE answer ADD CONSTRAINT FK_DADD4A254FAF8F53 FOREIGN KEY (question_id_id) REFERENCES question (id) NOT DEFERRABLE INITIALLY IMMEDIATE');

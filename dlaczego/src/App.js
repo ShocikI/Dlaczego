@@ -4,22 +4,23 @@ import { BrowserRouter } from 'react-router-dom'
 import NavBar from "./main_separation/navbar/NavBar"
 import SideBar from "./main_separation/sidebar/SideBar"
 import Window from "./main_separation/window/Window"
-import SearchBar from "./main_separation/search_bar/SearchBar";
+import SearchBar from "./main_separation/search_bar/SearchBar"
 import './app.sass';
 
 class App extends React.Component {
 
   state = {
     data: [],
-    isLogged: true
+    isLogged: false
   }
 
-  async componentDidMount() {
+  async componentDidMount()
+  {
     try {
-      const res = await axios.get('http://localhost:8080')
+      const res = await axios.get('https://localhost:8000/')
       this.setState({data: res.data})
-    } catch (error) {
-      console.log(error)
+    } catch (err){
+      console.log(err);
     }
   }
 

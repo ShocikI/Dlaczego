@@ -12,12 +12,13 @@ class AddAnswerForm extends React.Component {
 
     render() {
         return (
-            <form className={styles.standard}>
+            <form className={styles.standard}
+                  onSubmit={this.addAnswer}>
                 <Textarea
                     placeholder="Nooo... Dlaczego?"
                     rows={3}
                 />
-                <Button onClick={this.addAnswer()}/>
+                <Button type="submit"/>
             </form>
         )
     }

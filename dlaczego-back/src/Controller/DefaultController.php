@@ -32,33 +32,43 @@ class DefaultController extends AbstractController
     /**
      * @Route("/settings", name="settings", methods={"GET"})
      */
-    public function settings()
-    {
-        // TODO
-    }
+//    public function settings()
+//    {
+//        // TODO
+//    }
 
     /**
      * @Route("/profile/{user}", name="profile", methods={"GET"})
      */
-    public function profile()
-    {
-        // TODO
-    }
+//    public function profile(string $login): string
+//    {
+//        $uRepo = $this->get(UserRepository::class);
+//        $user = $uRepo->findOneBy($login, );
+//        $userD = $user->getUserDetails();
+//
+//        return $this->json([
+//            $user->getLogin(),
+//            $userD[1],
+//            $userD[2],
+//            $userD[3],
+//            $user->getQuestions()
+//        ]);
+//    }
 
     /**
      * @Route("/{question_id}", name="question", methods={"GET"})
      */
-    public function question()
-    {
-        // TODO
-    }
+//    public function question(int $question_id)
+//    {
+//
+//    }
 
     /**
      * @Route("/addQuestion", name="addQuestion", methods={"GET"})
      */
-    public function addQuestion()
-    {
-        // TODO
-    }
+//    public function addQuestion()
+//    {
+//        // TODO
+//    }
 
 }

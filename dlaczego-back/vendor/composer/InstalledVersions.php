@@ -251,6 +251,15 @@ private static $installed = array (
       ),
       'reference' => '1cb1cde8e8dd0f70cc0fe51354a59acad9302084',
     ),
+    'nelmio/cors-bundle' => 
+    array (
+      'pretty_version' => '2.1.1',
+      'version' => '2.1.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '0b964b665016dfb61dd0fd2bb8c24afb1ae45a93',
+    ),
     'nikic/php-parser' => 
     array (
       'pretty_version' => 'v4.10.4',
@@ -856,12 +865,12 @@ private static $installed = array (
     ),
     'symfony/validator' => 
     array (
-      'pretty_version' => 'v5.2.6',
-      'version' => '5.2.6.0',
+      'pretty_version' => 'v5.2.7',
+      'version' => '5.2.7.0',
       'aliases' => 
       array (
       ),
-      'reference' => '67354644f9baba3cc122134c255b7461b7e0fe31',
+      'reference' => 'b0be0360bfbf15059308d815da7f4151bd448b37',
     ),
     'symfony/var-dumper' => 
     array (

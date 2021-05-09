@@ -92,6 +92,9 @@
       <excludeFolder url="file://$MODULE_DIR$/dlaczego-back/vendor/symfony/polyfill-uuid" />
       <excludeFolder url="file://$MODULE_DIR$/dlaczego-back/vendor/symfony/uid" />
       <excludeFolder url="file://$MODULE_DIR$/dlaczego/build" />
+      <excludeFolder url="file://$MODULE_DIR$/dlaczego-back/public/bundles" />
+      <excludeFolder url="file://$MODULE_DIR$/dlaczego-back/var" />
+      <excludeFolder url="file://$MODULE_DIR$/dlaczego-back/vendor" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

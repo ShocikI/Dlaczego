@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\User;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -32,6 +33,24 @@ class SecurityController extends AbstractController
 //    public function register()
 //    {
 //        // TODO
+//        $entityManager = $this->getDoctrine()->getManager();
+//
+//        $user = new User();
+//        $user->setEmail('mail@mail.pl');
+//        $user->setLogin('PechAp');
+//        $user->setPassword('peszek');
+//        $user->setTelnumber('999999999');
+//
+//        $entityManager->persist($user);
+//
+//        $entityManager->flush();
+//
+//        return $this->json([
+//           $user->getEmail(),
+//           $user->getLogin(),
+//           $user->getPassword(),
+//           $user->getTelnumber()
+//        ]);
 //    }
 
     /**

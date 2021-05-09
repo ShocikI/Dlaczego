@@ -10,14 +10,6 @@ import WindowLoading from "../../pages/window_loading/WindowLoading";
 
 class Window extends React.Component {
 
-    windowLinks = [
-        ["/addquestion",WindowAddQuestion],
-        ["/", WindowMain],
-        ["/profile", WindowProfile],
-        ["/settings", WindowSettings],
-        ["/question", WindowQuestion]
-    ]
-
     // paths = (windowLinks) => {
     // windowLinks.map((link) => {
     //     <Route path={link[0]} component={link[1]}/>;
@@ -43,7 +35,7 @@ class Window extends React.Component {
                                    component={WindowAddQuestion}
                             />
                         </Switch> :
-                        <WindowMain/>
+                        <WindowMain data={this.props}/>
                     }
                 </div>
             </div>

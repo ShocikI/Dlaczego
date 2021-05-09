@@ -12,21 +12,25 @@ class ChangePasswordForm extends React.Component{
 
     render() {
         return(
-            <form className={styles.standard}>
+            <form className={styles.standard}
+                  onSubmit={this.changePassword}>
                 <h2>Zmień hasło</h2>
                 <Input
-                    placeholder="stare hasło"
+                    name={"current_password"}
+                    placeholder="obecne hasło"
                     maxLength={255}
                     />
                 <Input
+                    name={"new_password"}
                     placeholder="nowe hasło"
                     maxLength={255}
                     />
                 <Input
+                    name={"new_password_rpt"}
                     placeholder="powtórz nowe hasło"
                     maxLength={255}
                     />
-                <Button onClick={this.changePassword()}/>
+                <Button type="submit"/>
             </form>
         )
     }
