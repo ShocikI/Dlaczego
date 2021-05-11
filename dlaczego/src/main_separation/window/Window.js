@@ -35,7 +35,7 @@ class Window extends React.Component {
                                    component={WindowAddQuestion}
                             />
                         </Switch> :
-                        <WindowMain data={this.props}/>
+                        <WindowMain data={this.props.data[0]}/>
                     }
                 </div>
             </div>
