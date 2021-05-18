@@ -39,7 +39,7 @@ class UserAuth implements UserInterface
         return $this->id;
     }
 
-    public function getLogin(): ?string
+    public function getGLogin(): ?string
     {
         return $this->login;
     }

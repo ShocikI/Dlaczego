@@ -30,7 +30,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => 'd07450d2bf29cfcc4a307cd18415c1c955321137',
+    'reference' => 'aef3e95f4311f8b612a06052b5bc7d12d0f48300',
     'name' => 'forum-dlaczego/forum',
   ),
   'versions' => 
@@ -222,7 +222,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => 'd07450d2bf29cfcc4a307cd18415c1c955321137',
+      'reference' => 'aef3e95f4311f8b612a06052b5bc7d12d0f48300',
     ),
     'friendsofphp/proxy-manager-lts' => 
     array (

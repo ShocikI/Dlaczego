@@ -15,60 +15,58 @@ class SecurityController extends AbstractController
     /**
      * @Route("/", name="login", methods={"POST"})
      */
-//    public function login()
-//    {
-//        // TODO
-//    }
+    public function login()
+    {
+        return $this->json("login");
+    }
 
     /**
      * @Route("/settings", name="logout", methods={"POST"})
      */
-//    public function logout()
-//    {
-//        // TODO
-//    }
+    public function logout()
+    {
+        return $this->json("logout");
+    }
 
     /**
      * @Route("/", name="register", methods={"POST"})
      */
-//    public function register()
-//    {
+    public function register()
+    {
 //        // TODO
-//        $entityManager = $this->getDoctrine()->getManager();
-//
-//        $user = new User();
-//        $user->setEmail('mail@mail.pl');
-//        $user->setLogin('PechAp');
-//        $user->setPassword('peszek');
-//        $user->setTelnumber('999999999');
-//
-//        $entityManager->persist($user);
-//
-//        $entityManager->flush();
-//
-//        return $this->json([
-//           $user->getEmail(),
-//           $user->getLogin(),
-//           $user->getPassword(),
-//           $user->getTelnumber()
-//        ]);
-//    }
+//        return $this->json("register");
+        $entityManager = $this->getDoctrine()->getManager();
+
+        $user = new User();
+        $user->setEmail('mail@mail.pl');
+        $user->setLogin('PechAp');
+        $user->setPassword('peszek');
+        $user->setTelnumber('999999999');
+
+        $entityManager->persist($user);
+
+        $entityManager->flush();
+
+        return $this->redirectToRoute('home');
+    }
 
     /**
      * @Route("/settings", name="deleteUser", methods={"DELETE"})
      */
-//    public function deleteUser()
-//    {
-//        // TODO
-//    }
+    public function deleteUser()
+    {
+        // TODO
+        return $this->json("settings");
+    }
 
     /**
      * @Route("/settings", name="changeDescription", methods={"POST"})
      */
-//    public function changeDescription()
-//    {
-//        // TODO
-//    }
+    public function changeDescription()
+    {
+        // TODO
+        return $this->json("change description");
+    }
 
     /**
      * @Route("/{user}, name="giveLike", methods{""})
@@ -89,25 +87,25 @@ class SecurityController extends AbstractController
 /**
  * @Route("/login", name="app_login")
  */
-public function login(AuthenticationUtils $authenticationUtils): Response
-{
-    // if ($this->getUser()) {
-    //     return $this->redirectToRoute('target_path');
-    // }
-
-    // get the login error if there is one
-    $error = $authenticationUtils->getLastAuthenticationError();
-    // last username entered by the user
-    $lastUsername = $authenticationUtils->getLastUsername();
-
-    return $this->render('security/login.html.twig', ['last_username' => $lastUsername, 'error' => $error]);
-}
-
-/**
- * @Route("/logout", name="app_logout")
- */
-public function logout()
-{
-    throw new \LogicException('This method can be blank - it will be intercepted by the logout key on your firewall.');
-}
+//public function login(AuthenticationUtils $authenticationUtils): Response
+//{
+//    // if ($this->getUser()) {
+//    //     return $this->redirectToRoute('target_path');
+//    // }
+//
+//    // get the login error if there is one
+//    $error = $authenticationUtils->getLastAuthenticationError();
+//    // last username entered by the user
+//    $lastUsername = $authenticationUtils->getLastUsername();
+//
+//    return $this->render('security/login.html.twig', ['last_username' => $lastUsername, 'error' => $error]);
+//}
+//
+///**
+// * @Route("/logout", name="app_logout")
+// */
+//public function logout()
+//{
+//    throw new \LogicException('This method can be blank - it will be intercepted by the logout key on your firewall.');
+//}
 }

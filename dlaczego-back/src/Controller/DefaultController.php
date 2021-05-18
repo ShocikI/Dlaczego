@@ -18,7 +18,7 @@ class DefaultController extends AbstractController
     public function home()
     {
         $questions = new Question();
-        $questions->setContent('Dlaczego mi nie dziala?');
+        $questions->setContent('Dlaczego mi nie działa?');
         $questions->setLikes(0);
         $questions->setDislikes(0);
 
@@ -32,16 +32,17 @@ class DefaultController extends AbstractController
     /**
      * @Route("/settings", name="settings", methods={"GET"})
      */
-//    public function settings()
-//    {
-//        // TODO
-//    }
+    public function settings()
+    {
+        // TODO
+        return $this->json("settings");
+    }
 
     /**
      * @Route("/profile/{user}", name="profile", methods={"GET"})
      */
-//    public function profile(string $login): string
-//    {
+    public function profile(string $login): string
+    {
 //        $uRepo = $this->get(UserRepository::class);
 //        $user = $uRepo->findOneBy($login, );
 //        $userD = $user->getUserDetails();
@@ -53,22 +54,24 @@ class DefaultController extends AbstractController
 //            $userD[3],
 //            $user->getQuestions()
 //        ]);
-//    }
+        return $this->json("profile");
+    }
 
     /**
      * @Route("/{question_id}", name="question", methods={"GET"})
      */
 //    public function question(int $question_id)
 //    {
-//
+//        return $this->json("question");
 //    }
 
     /**
      * @Route("/addQuestion", name="addQuestion", methods={"GET"})
      */
-//    public function addQuestion()
-//    {
-//        // TODO
-//    }
+    public function addQuestion()
+    {
+        // TODO
+        return $this->json("add_question");
+    }
 
 }

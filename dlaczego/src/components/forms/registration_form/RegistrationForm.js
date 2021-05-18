@@ -13,21 +13,22 @@ class RegistrationForm extends React.Component {
 
     register = async e => {
         e.preventDefault();
-        console.log(e.target.passwordConfirm.value)
 
         if (!this.samePasswords(e.target.password.value, e.target.passwordConfirm.value)) {
                 // TODO validation()
             return
         }
 
-        try {
-            await axios.post('http://localhost:8000/', {
-                email:      e.target.email.value,
-                login:      e.target.login.value,
-                password:   e.target.password.value,
-                telnumber:  e.target.telnumber.value
-            })
+        const userData = {
+            email:      e.target.email.value,
+            login:      e.target.login.value,
+            password:   e.target.password.value,
+            telnumber:  e.target.telnumber.value
+        }
 
+        try {
+            await axios.post('http://localhost:8000/', userData)
+            console.log(userData)
         } catch (ex) {
             console.log(ex)
         }
