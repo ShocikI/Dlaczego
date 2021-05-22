@@ -7,6 +7,7 @@ use App\Entity\User;
 use App\Repository\QuestionRepository;
 use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -14,8 +15,9 @@ class DefaultController extends AbstractController
 {
     /**
      * @Route("/", name="home", methods={"GET"})
+     * @return JsonResponse
      */
-    public function home()
+    public function home(): JsonResponse
     {
         $questions = new Question();
         $questions->setContent('Dlaczego mi nie działa?');
@@ -31,8 +33,9 @@ class DefaultController extends AbstractController
 
     /**
      * @Route("/settings", name="settings", methods={"GET"})
+     * @return JsonResponse
      */
-    public function settings()
+    public function settings(): JsonResponse
     {
         // TODO
         return $this->json("settings");
@@ -40,8 +43,10 @@ class DefaultController extends AbstractController
 
     /**
      * @Route("/profile/{user}", name="profile", methods={"GET"})
+     * @param string $login
+     * @return JsonResponse
      */
-    public function profile(string $login): string
+    public function profile(string $login): JsonResponse
     {
 //        $uRepo = $this->get(UserRepository::class);
 //        $user = $uRepo->findOneBy($login, );
@@ -59,19 +64,39 @@ class DefaultController extends AbstractController
 
     /**
      * @Route("/{question_id}", name="question", methods={"GET"})
+     * @param int $question_id
+     * @return JsonResponse
      */
-//    public function question(int $question_id)
-//    {
-//        return $this->json("question");
-//    }
+    public function question(int $question_id): JsonResponse
+    {
+        return $this->json("question");
+    }
 
     /**
      * @Route("/addQuestion", name="addQuestion", methods={"GET"})
+     * @return JsonResponse
      */
-    public function addQuestion()
+    public function addQuestion(): JsonResponse
     {
         // TODO
         return $this->json("add_question");
     }
 
+    /**
+     * @Route("/login", name="login", methods={"GET"})
+     * @return JsonResponse
+     */
+    public function loginPage(): JsonResponse
+    {
+        return $this->json("login page");
+    }
+
+    /**
+     * @Route("/register", name="register", methods={"GET"})
+     * @return JsonResponse
+     */
+    public function registerPage(): JsonResponse
+    {
+        return $this->json("register page");
+    }
 }

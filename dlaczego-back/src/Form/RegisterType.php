@@ -22,13 +22,13 @@ class RegisterType extends AbstractType
             ->add('login'       ,TextType::class, [
                 'required' => true
             ])
-            ->add('password'    ,PasswordType::class,[
+            ->add('password'    ,PasswordType::class, [
                 'required' => true
             ])
             ->add('telnumber'   ,TextType::class, [
                 'required' => true
             ])
-            ->add('save'        ,SubmitType::class, [
+            ->add('newUser'     ,SubmitType::class, [
                 'label' => 'Accept'
             ])
         ;

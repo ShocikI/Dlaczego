@@ -2,42 +2,42 @@
 
 namespace App\Controller;
 
+use App\Form\AddQuestionType;
+
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Question;
-use Symfony\Component\Validator\Constraints\DateTime;
 
 class QuestionController extends AbstractController
 {
     /**
-     * @Route("/addQuestion", name="newQuestion", methods{"POST"})
+     * @Route("/addQuestion", name="newQuestion", methods={"POST"})
+     * @param Request $request
+     * @return RedirectResponse
      */
-//    public function newQuestions()
-//    {
-//        $entityManager = $this->getDoctrine()->getManager();
-//
-//        $date = new \DateTime();
-//
-//        $question = new Question();
-//        $question->setContent('Dlaczego mi nie działa?');
-//        $question->setCreatedAt($date);
-//        $question->setLikes(0);
-//        $question->setDislikes(0);
-//        $question->setUserId(null);
-//
-//        $entityManager->persist($question);
-//
-//        $entityManager->flush();
-//
-//        return $this->json([
-//            $question->getContent(),
-//            $question->getCreatedAt(),
-//            $question->getLikes(),
-//            $question->getDislikes(),
-//            $question->getUserId()
-//        ]);
-//    }
+    public function newQuestions(Request $request): RedirectResponse
+    {
+        $entityManager = $this->getDoctrine()->getManager();
+
+        $question = new Question();
+
+        $form = $this->createForm(AddQuestionType::class, $question);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid())
+        {
+            $question = $form->getData();
+
+            $entityManager->persist($question);
+
+            $entityManager->flush();
+        }
+
+        return $this->redirect('/');
+    }
 
     /**
      * @Route("/{question_id}", name="deleteQuestion", methods{"DELETE"})
@@ -48,7 +48,7 @@ class QuestionController extends AbstractController
 //    }
 
     /**
-     * @Route("/{question_id}, name="giveLike", methods{""})
+     * @Route("/{question_id}, name="giveLike", methods{"PUT"})
      */
 //    public function giveLike($question_id)
 //    {
@@ -56,7 +56,7 @@ class QuestionController extends AbstractController
 //    }
 
     /**
-     * @Route("/{question_id}, name="giveDislike", methods{""})
+     * @Route("/{question_id}, name="giveDislike", methods{"PUT"})
      */
 //    public function giveDislike($question_id)
 //    {

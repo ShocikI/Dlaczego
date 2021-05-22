@@ -15,9 +15,26 @@ class AddAnswerType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+        $date = date("Y-m-d H:i:s");
+
         $builder
             ->add('content'     ,TextareaType::class, [
                 'required' => true
+            ])
+            ->add('created_at'  ,DateType::class, [
+                'data' => $date
+            ])
+            ->add('likes'       ,IntegerType::class, [
+                'data' => 0
+            ])
+            ->add('dislikes'    ,IntegerType::class, [
+                'data' => 0
+            ])
+            ->add('questionId'  ,IntegerType::class, [
+
+            ])
+            ->add('userId'      ,IntegerType::class, [
+
             ])
             ->add('save'        ,SubmitType::class)
         ;

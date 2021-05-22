@@ -3,7 +3,10 @@
 namespace App\Controller;
 
 use App\Entity\User;
+use App\Form\RegisterType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
@@ -11,43 +14,30 @@ use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 class SecurityController extends AbstractController
 {
-
     /**
-     * @Route("/", name="login", methods={"POST"})
+     * @Route("/", name="newUser", methods={"POST"})
+     * @param Request $request
+     * @return RedirectResponse
      */
-    public function login()
+    public function newUser(Request $request): RedirectResponse
     {
-        return $this->json("login");
-    }
-
-    /**
-     * @Route("/settings", name="logout", methods={"POST"})
-     */
-    public function logout()
-    {
-        return $this->json("logout");
-    }
-
-    /**
-     * @Route("/", name="register", methods={"POST"})
-     */
-    public function register()
-    {
-//        // TODO
-//        return $this->json("register");
         $entityManager = $this->getDoctrine()->getManager();
 
         $user = new User();
-        $user->setEmail('mail@mail.pl');
-        $user->setLogin('PechAp');
-        $user->setPassword('peszek');
-        $user->setTelnumber('999999999');
 
-        $entityManager->persist($user);
+        $form = $this->createForm(RegisterType::class, $user);
+        $form->handleRequest($request);
 
-        $entityManager->flush();
+        if ($form->isSubmitted() && $form->isValid())
+        {
+            $user = $form->getData();
 
-        return $this->redirectToRoute('home');
+            $entityManager->persist($user);
+
+            $entityManager->flush();
+        }
+
+        return $this->redirect('/');
     }
 
     /**
@@ -69,7 +59,7 @@ class SecurityController extends AbstractController
     }
 
     /**
-     * @Route("/{user}, name="giveLike", methods{""})
+     * @Route("/{user}, name="giveLike", methods{"PUT"})
      */
 //    public function giveLike($user)
 //    {
@@ -77,7 +67,7 @@ class SecurityController extends AbstractController
 //    }
 
     /**
-     * @Route("/{user}, name="giveDislike", methods{""})
+     * @Route("/{user}, name="giveDislike", methods{"PUT"})
      */
 //    public function giveDislike($user)
 //    {
