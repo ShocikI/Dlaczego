@@ -5,10 +5,15 @@ import WindowProfile from "../../pages/window_profile/WindowProfile";
 import WindowSettings from "../../pages/window_settings/WindowSettings";
 import WindowMain from "../../pages/window_main/WindowMain"
 import WindowQuestion from "../../pages/window_question/WindowQuestion"
+import WindowLogin from "../../pages/window_login/WindowLogin";
+import WindowRegister from "../../pages/window_register/WindowRegister";
 import styles from './window.module.sass'
 import WindowLoading from "../../pages/window_loading/WindowLoading";
 
 class Window extends React.Component {
+    componentDidMount() {
+        super.componentDidMount();
+    }
 
     // paths = (windowLinks) => {
     // windowLinks.map((link) => {
@@ -34,8 +39,19 @@ class Window extends React.Component {
                             <Route path={"/addquestion"}
                                    component={WindowAddQuestion}
                             />
-                        </Switch> :
-                        <WindowMain/>
+                        </Switch>
+                        :
+                        <Switch>
+                            <Route path={"/"}
+                                   component={WindowMain}
+                            />
+                            <Route path={"/login"}
+                                   component={WindowLogin}
+                            />
+                            <Route path={"/register"}
+                                   component={WindowRegister}
+                            />
+                        </Switch>
                     }
                 </div>
             </div>

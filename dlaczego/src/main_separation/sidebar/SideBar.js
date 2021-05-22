@@ -1,7 +1,7 @@
 import React from "react"
 import styles from "./sidebar.module.sass"
 import SearchResult from "../../components/fundamental/results/search_result/SearchResult";
-import Forms from "../../components/forms/Forms";
+import WOQuestionFrame from "../../components/frames/wo_question_frame/WOQuestionFrame";
 
 class SideBar extends React.Component {
 
@@ -10,7 +10,7 @@ class SideBar extends React.Component {
             <div className={styles.standard}>
                 {this.props.isLogged ?
                     <SearchResult/> :
-                    <Forms/>
+                    <WOQuestionFrame/>
                 }
             </div>
         );

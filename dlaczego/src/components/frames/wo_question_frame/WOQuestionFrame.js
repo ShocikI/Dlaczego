@@ -22,6 +22,8 @@ class WOQuestionFrame extends React.Component {
     //         state.data.map((item) => {
     //             <li className={styles.links}>{item}</li>
     //         })
+    //     } else {
+    //          setState({data: "Brak pytań"})
     //     }
     // }
 
