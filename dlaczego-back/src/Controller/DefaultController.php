@@ -41,13 +41,13 @@ class DefaultController extends AbstractController
         return $this->json("settings");
     }
 
-    /**
-     * @Route("/profile/{user}", name="profile", methods={"GET"})
-     * @param string $login
-     * @return JsonResponse
-     */
-    public function profile(string $login): JsonResponse
-    {
+//    /**
+//     * @Route("/profile/{user}", name="profile", methods={"GET"})
+//     * @param string $login
+//     * @return JsonResponse
+//     */
+//    public function profile(string $login): JsonResponse
+//    {
 //        $uRepo = $this->get(UserRepository::class);
 //        $user = $uRepo->findOneBy($login, );
 //        $userD = $user->getUserDetails();
@@ -59,18 +59,18 @@ class DefaultController extends AbstractController
 //            $userD[3],
 //            $user->getQuestions()
 //        ]);
-        return $this->json("profile");
-    }
+//        return $this->json("profile");
+//    }
 
-    /**
-     * @Route("/{question_id}", name="question", methods={"GET"})
-     * @param int $question_id
-     * @return JsonResponse
-     */
-    public function question(int $question_id): JsonResponse
-    {
-        return $this->json("question");
-    }
+//    /**
+//     * @Route("/{question_id}", name="question", methods={"GET"})
+//     * @param int $question_id
+//     * @return JsonResponse
+//     */
+//    public function question(int $question_id): JsonResponse
+//    {
+//        return $this->json("question");
+//    }
 
     /**
      * @Route("/addQuestion", name="addQuestion", methods={"GET"})

@@ -27,7 +27,7 @@ class RegistrationForm extends React.Component {
         }
 
         try {
-            await axios.post('http://localhost:8000/', userData)
+            await axios.post('http://localhost:8000/register', userData)
             console.log(userData)
         } catch (ex) {
             console.log(ex)

@@ -15,12 +15,15 @@ use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 class SecurityController extends AbstractController
 {
     /**
-     * @Route("/", name="newUser", methods={"POST"})
+     * @Route("/register", name="newUser", methods={"POST"})
      * @param Request $request
-     * @return RedirectResponse
+     * @return Response
      */
-    public function newUser(Request $request): RedirectResponse
+    public function newUser(Request $request): Response
     {
+        if ($request->getMethod() != "POST") {
+            return $this->json("Method is not POST", 400);
+        }
         $entityManager = $this->getDoctrine()->getManager();
 
         $user = new User();
@@ -35,9 +38,11 @@ class SecurityController extends AbstractController
             $entityManager->persist($user);
 
             $entityManager->flush();
+
+            return new Response('User added to database', 201);
         }
 
-        return $this->redirect('/');
+        return $this->json($form, 400);
     }
 
     /**

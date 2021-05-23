@@ -11,15 +11,6 @@ import styles from './window.module.sass'
 import WindowLoading from "../../pages/window_loading/WindowLoading";
 
 class Window extends React.Component {
-    componentDidMount() {
-        super.componentDidMount();
-    }
-
-    // paths = (windowLinks) => {
-    // windowLinks.map((link) => {
-    //     <Route path={link[0]} component={link[1]}/>;
-    //     });
-    // }
 
     render(props) {
         return(

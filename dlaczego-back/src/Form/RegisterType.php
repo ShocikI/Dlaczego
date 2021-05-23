@@ -28,9 +28,7 @@ class RegisterType extends AbstractType
             ->add('telnumber'   ,TextType::class, [
                 'required' => true
             ])
-            ->add('newUser'     ,SubmitType::class, [
-                'label' => 'Accept'
-            ])
+            ->add('save'        ,SubmitType::class)
         ;
     }
 

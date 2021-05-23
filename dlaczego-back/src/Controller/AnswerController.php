@@ -19,27 +19,27 @@ class AnswerController extends AbstractController
      * @param int $question_id
      * @return RedirectResponse
      */
-    public function newAnswer(Request $request, int $question_id): RedirectResponse
-    {
-
-        $entityManager = $this->getDoctrine()->getManager();
-
-        $answer = new Answer();
-
-        $form = $this->createForm(AddAnswerType::class, $answer);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid())
-        {
-            $answer = $form->getData();
-
-            $entityManager->persist($answer);
-
-            $entityManager->flush();
-        }
-
-        return $this->redirect('/'.$question_id);
-    }
+//    public function newAnswer(Request $request, int $question_id): RedirectResponse
+//    {
+//
+//        $entityManager = $this->getDoctrine()->getManager();
+//
+//        $answer = new Answer();
+//
+//        $form = $this->createForm(AddAnswerType::class, $answer);
+//        $form->handleRequest($request);
+//
+//        if ($form->isSubmitted() && $form->isValid())
+//        {
+//            $answer = $form->getData();
+//
+//            $entityManager->persist($answer);
+//
+//            $entityManager->flush();
+//        }
+//
+//        return $this->redirect('/'.$question_id);
+//    }
 
     /**
      * @Route("/{question_id}", name="deleteAnswer", methods={"DELETE"})
