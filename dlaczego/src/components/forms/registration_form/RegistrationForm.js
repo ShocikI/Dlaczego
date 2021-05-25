@@ -36,41 +36,43 @@ class RegistrationForm extends React.Component {
 
     render() {
         return(
-            <form className={styles.standard}
-                  onSubmit={(e) => this.register(e)}>
-                <h2>Zarejestruj się</h2>
-                <Input
-                    name={"email"}
-                    type={"email"}
-                    placeholder={"email"}
-                    maxLength={255}
-                    />
-                <Input
-                    name={"login"}
-                    type={"text"}
-                    placeholder={"login"}
-                    maxLength={255}
-                    />
-                <Input
-                    name={"password"}
-                    type={"password"}
-                    placeholder={"hasło"}
-                    maxLength={255}
-                    />
-                <Input
-                    name={"passwordConfirm"}
-                    type={"password"}
-                    placeholder={"powtórz hasło"}
-                    maxLength={255}
-                    />
-                <Input
-                    name={"telnumber"}
-                    type={"text"}
-                    placeholder={"number telefonu"}
-                    maxLength={9}
-                    />
-                <Button type="submit"/>
-            </form>
+            <div className={styles.flex}>
+                <form className={styles.standard}
+                      onSubmit={(e) => this.register(e)}>
+                    <h2>Zarejestruj się</h2>
+                    <Input
+                        name={"email"}
+                        type={"email"}
+                        placeholder={"email"}
+                        maxLength={255}
+                        />
+                    <Input
+                        name={"login"}
+                        type={"text"}
+                        placeholder={"login"}
+                        maxLength={255}
+                        />
+                    <Input
+                        name={"password"}
+                        type={"password"}
+                        placeholder={"hasło"}
+                        maxLength={255}
+                        />
+                    <Input
+                        name={"passwordConfirm"}
+                        type={"password"}
+                        placeholder={"powtórz hasło"}
+                        maxLength={255}
+                        />
+                    <Input
+                        name={"telnumber"}
+                        type={"text"}
+                        placeholder={"number telefonu"}
+                        maxLength={9}
+                        />
+                    <Button type="submit"/>
+                </form>
+            </div>
         )
     }
 }

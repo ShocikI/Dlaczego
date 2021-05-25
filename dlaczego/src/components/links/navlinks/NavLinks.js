@@ -7,22 +7,22 @@ function NavLinks() {
         <div className={styles.standard}>
             <ul>
                 <li>
-                    <NavLink to={"/"}
+                    <NavLink to="/"
                              className={styles.links}
                     >Strona główna</NavLink>
                 </li>
                 <li>
-                    <NavLink to={"/profile"}
+                    <NavLink to="/profile"
                              className={styles.links}
                     >Profil</NavLink>
                 </li>
                 <li>
-                    <NavLink to={"/addquestion"}
+                    <NavLink to="/addquestion"
                              className={styles.links}
                     >Zapytaj</NavLink>
                 </li>
                 <li>
-                    <NavLink to={"/settings"}
+                    <NavLink to="/settings"
                              className={styles.links}
                     >Ustawienia</NavLink>
                 </li>

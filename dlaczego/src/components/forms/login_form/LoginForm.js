@@ -12,23 +12,25 @@ class LoginForm extends React.Component {
 
     render() {
         return(
-            <form className={styles.standard}
-                  onSubmit={this.login}>
-                <h2>Zaloguj się</h2>
-                <Input
-                    name={"login"}
-                    placeholder={"login"}
-                    maxLength={255}
-                    type={"text"}
-                    />
-                <Input
-                    name={"password"}
-                    placeholder={"hasło"}
-                    maxLength={255}
-                    type={"password"}
-                    />
-                <Button type="submit"/>
-            </form>
+            <div className={styles.flex}>
+                <form className={styles.standard}
+                      onSubmit={this.login}>
+                    <h2>Zaloguj się</h2>
+                    <Input
+                        name={"login"}
+                        placeholder={"login"}
+                        maxLength={255}
+                        type={"text"}
+                        />
+                    <Input
+                        name={"password"}
+                        placeholder={"hasło"}
+                        maxLength={255}
+                        type={"password"}
+                        />
+                    <Button type="submit"/>
+                </form>
+            </div>
         )
     }
 }

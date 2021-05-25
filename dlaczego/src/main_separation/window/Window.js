@@ -16,34 +16,26 @@ class Window extends React.Component {
         return(
             <div className={styles.flex}>
                 <div className={styles.standard}>
-                    {this.props.isLogged ?
-                        <Switch>
-                            <Route path={"/"}
-                                   component={WindowMain}
-                            />
-                            <Route path={"/profile"}
-                                   component={WindowProfile}
-                            />
-                            <Route path={"/settings"}
-                                   component={WindowSettings}
-                            />
-                            <Route path={"/addquestion"}
-                                   component={WindowAddQuestion}
-                            />
-                        </Switch>
-                        :
-                        <Switch>
-                            <Route path={"/"}
-                                   component={WindowMain}
-                            />
-                            <Route path={"/login"}
-                                   component={WindowLogin}
-                            />
-                            <Route path={"/register"}
-                                   component={WindowRegister}
-                            />
-                        </Switch>
-                    }
+                    <Switch>
+                        <Route exact path="/"
+                               component={WindowMain}
+                        />
+                        <Route path="/profile"
+                               component={WindowProfile}
+                        />
+                        <Route path="/settings"
+                               component={WindowSettings}
+                        />
+                        <Route path="/addquestion"
+                               component={WindowAddQuestion}
+                        />
+                        <Route path="/login"
+                               component={WindowLogin}
+                        />
+                        <Route path="/register"
+                               component={WindowRegister}
+                        />
+                    </Switch>
                 </div>
             </div>
         );
