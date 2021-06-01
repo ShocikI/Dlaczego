@@ -26,9 +26,21 @@ class RegistrationForm extends React.Component {
             telnumber:  e.target.telnumber.value
         }
 
+        const requestOptions = {
+            headers: {
+                'Access-Control-Allow-Origin': '*',
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Headers': 'X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Request-Method',
+                'Access-Control-Allow-Methods': 'GET, POST, OPTIONS, PUT, DELETE',
+                'Allow': 'GET, POST, OPTIONS, PUT, DELETE'
+            },
+        }
+
         try {
-            await axios.post('http://localhost:8000/register', userData)
-            console.log(userData)
+            await axios.post('http://localhost:8000/register', userData, requestOptions)
+                .then(function (response) {
+                console.log(response);
+            })
         } catch (ex) {
             console.log(ex)
         }
