@@ -30,17 +30,16 @@ class RegistrationForm extends React.Component {
             headers: {
                 'Access-Control-Allow-Origin': '*',
                 'Content-Type': 'application/json',
-                'Access-Control-Allow-Headers': 'X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Request-Method',
+                'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type',
                 'Access-Control-Allow-Methods': 'GET, POST, OPTIONS, PUT, DELETE',
                 'Allow': 'GET, POST, OPTIONS, PUT, DELETE'
             },
+            mode :'cors'
         }
 
         try {
-            await axios.post('http://localhost:8000/register', userData, requestOptions)
-                .then(function (response) {
-                console.log(response);
-            })
+            const response = await axios.post('http://localhost:8000/register', userData, requestOptions)
+            console.log(response)
         } catch (ex) {
             console.log(ex)
         }

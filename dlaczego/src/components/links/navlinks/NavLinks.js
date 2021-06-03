@@ -1,5 +1,5 @@
 import React from "react"
-import styles from "./navlinks.module.sass"
+import styles from "../links.module.sass"
 import { NavLink } from "react-router-dom"
 
 function NavLinks() {

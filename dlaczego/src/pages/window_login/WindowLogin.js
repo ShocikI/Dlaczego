@@ -1,5 +1,5 @@
 import React from "react"
-import styles from './windowlogin.module.sass'
+import styles from '../windowstandard.module.sass'
 import axios from "axios";
 import LoginForm from "../../components/forms/login_form/LoginForm";
 

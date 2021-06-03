@@ -1,6 +1,6 @@
-@import '../../../assets/styles/colors'
-@import "../../../assets/styles/font"
-@import "../../../assets/styles/border"
+@import '../../assets/styles/colors'
+@import "../../assets/styles/font"
+@import "../../assets/styles/border"
 
 .standard
   display: flex
@@ -33,3 +33,23 @@
           color: $twhite
           background: $background
           border: $tblack solid $small-border
+
+@media (max-width: 751px)
+  .standard
+    ul
+      padding-right: 1.5rem
+
+@media (max-width: 640px)
+  .standard
+    min-width: 320px
+
+    ul
+      width: 100vw
+      justify-content: space-around
+      padding: 0 0.5rem
+
+      li
+        margin-right: 0
+
+        a
+          padding: 0.15rem 0.4rem

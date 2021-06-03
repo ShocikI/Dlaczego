@@ -1,5 +1,5 @@
 import React from "react"
-import styles from './windowregister.module.sass'
+import styles from '../windowstandard.module.sass'
 import axios from "axios";
 import RegistrationForm from "../../components/forms/registration_form/RegistrationForm";
 

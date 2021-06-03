@@ -1,5 +1,5 @@
 import React from "react"
-import styles from './windowmain.module.sass'
+import styles from '../windowstandard.module.sass'
 import axios from "axios";
 
 class WindowMain extends React.Component {

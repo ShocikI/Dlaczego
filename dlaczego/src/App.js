@@ -4,7 +4,7 @@ import NavBar from "./main_separation/navbar/NavBar"
 import SideBar from "./main_separation/sidebar/SideBar"
 import Window from "./main_separation/window/Window"
 import SearchBar from "./main_separation/search_bar/SearchBar"
-import './app.sass';
+import './app.sass'
 
 class App extends React.Component {
 

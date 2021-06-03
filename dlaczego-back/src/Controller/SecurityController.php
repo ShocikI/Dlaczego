@@ -21,6 +21,10 @@ class SecurityController extends AbstractController
      */
     public function newUser(Request $request): Response
     {
+
+        $request->headers->set('Access-Control-Allow-Origin','*');
+        $request->headers->set('Access-Control-Allow-Headers','Origin, X-Requested-With, Content-Type, Accept');
+
         if ($request->getMethod() != "POST") {
             return $this->json("Method is not POST", 400);
         }
@@ -28,21 +32,20 @@ class SecurityController extends AbstractController
 
         $user = new User();
 
-        $form = $this->createForm(RegisterType::class, $user);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid())
+        $data = $request->getContent();
+        return new Response($data, 201);
+        if ($data == NULL)
         {
-            $user = $form->getData();
+//            $user = $data;
 
-            $entityManager->persist($user);
+//            $entityManager->persist($user);
+//
+//            $entityManager->flush();
 
-            $entityManager->flush();
-
-            return new Response('User added to database', 201);
+            return new Response($data, 201);
         }
 
-        return $this->json($form, 400);
+        return $this->json($data, 400);
     }
 
     /**
