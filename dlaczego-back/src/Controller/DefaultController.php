@@ -70,7 +70,7 @@ class DefaultController extends AbstractController
     public function question(int $question_id): JsonResponse
     {
         if ($question_id < 0) {
-            return $this->json("Brak pytania o tym numerze :(", 202);
+            return $this->json("Nie udało się odnaleźć pytania", 202);
         }
 
         $question = $this->getDoctrine()
@@ -82,7 +82,7 @@ class DefaultController extends AbstractController
             ->getByQuestionId($question_id);
 
         if(!$question) {
-            return $this->json("Brak pytania o tym numerze :(", 202);
+            return $this->json("Nie udało się odnaleźć pytania", 202);
         }
 
         return $this->json([
