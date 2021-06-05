@@ -2,10 +2,11 @@
 
 namespace App\Controller;
 
+use App\Entity\Answer;
 use App\Entity\Question;
 use App\Entity\User;
 use App\Repository\QuestionRepository;
-use App\Repository\UserRepository;
+use App\Repository\AnswerRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
@@ -19,16 +20,15 @@ class DefaultController extends AbstractController
      */
     public function home(): JsonResponse
     {
-        $questions = new Question();
-        $questions->setContent('Dlaczego mi nie działa?');
-        $questions->setLikes(0);
-        $questions->setDislikes(0);
+        $question = $this->getDoctrine()
+            ->getRepository(Question::class)
+            ->getAll();
 
-        return $this->json([
-            $questions->getContent(),
-            $questions->getLikes(),
-            $questions->getDislikes(),
-        ]);
+        if(!$question) {
+            return $this->json("Brak pytań", 202);
+        }
+
+        return $this->json($question, 201);
     }
 
     /**
@@ -62,15 +62,34 @@ class DefaultController extends AbstractController
 //        return $this->json("profile");
 //    }
 
-//    /**
-//     * @Route("/{question_id}", name="question", methods={"GET"})
-//     * @param int $question_id
-//     * @return JsonResponse
-//     */
-//    public function question(int $question_id): JsonResponse
-//    {
-//        return $this->json("question");
-//    }
+    /**
+     * @Route("/question/{question_id}", name="question", methods={"GET"})
+     * @param int $question_id
+     * @return JsonResponse
+     */
+    public function question(int $question_id): JsonResponse
+    {
+        if ($question_id < 0) {
+            return $this->json("Brak pytania o tym numerze :(", 202);
+        }
+
+        $question = $this->getDoctrine()
+            ->getRepository(Question::class)
+            ->getById($question_id);
+
+        $answers = $this->getDoctrine()
+            ->getRepository(Answer::class)
+            ->getByQuestionId($question_id);
+
+        if(!$question) {
+            return $this->json("Brak pytania o tym numerze :(", 202);
+        }
+
+        return $this->json([
+            'question' => $question,
+            'answers' => $answers
+            ], 201);
+    }
 
     /**
      * @Route("/addQuestion", name="addQuestion", methods={"GET"})

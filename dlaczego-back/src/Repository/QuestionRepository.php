@@ -19,6 +19,48 @@ class QuestionRepository extends ServiceEntityRepository
         parent::__construct($registry, Question::class);
     }
 
+    public function getAll()
+    {
+        $entityManager = $this->getEntityManager();
+
+        $query = $entityManager->createQuery('
+            SELECT q.id, q.content 
+            FROM App\Entity\Question q 
+            ORDER BY q.id DESC
+        ');
+        return $query->getArrayResult();
+    }
+
+    public function getById($id)
+    {
+        $entityManager = $this->getEntityManager();
+
+        $query = $entityManager->createQuery('
+            SELECT q.id, q.content,
+            u.login, ud.created_at, ud.admin
+            FROM App\Entity\Question q 
+            JOIN q.userId u
+            JOIN u.userDetails ud
+            WHERE q.id = :id
+        ')->setParameter('id', $id);
+        return $query->getArrayResult();
+    }
+
+    public function getWithoutAnswers()
+    {
+        $entityManager = $this->getEntityManager();
+
+        $query = $entityManager->createQuery('
+            SELECT q.id, q.content 
+            FROM App\Entity\Question q
+            JOIN App\Entity\Answer a
+            WHERE q.id = a.question_id_id
+            ORDER BY q.id ASC
+        ');
+
+        return $query->getArrayResult();
+    }
+
     // /**
     //  * @return Question[] Returns an array of Question objects
     //  */

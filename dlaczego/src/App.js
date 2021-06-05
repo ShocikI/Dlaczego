@@ -23,8 +23,7 @@ class App extends React.Component {
             <NavBar isLogged={this.state.isLogged}/>
             <SideBar className="SideBar"
                      isLogged={this.state.isLogged}/>
-            <Window className="Window"
-                    isLogged={this.state.isLogged}/>
+            <Window className="Window"/>
           </div>
         </BrowserRouter>
     );
