@@ -20,15 +20,19 @@ class DefaultController extends AbstractController
      */
     public function home(): JsonResponse
     {
+        $withoutAnswers = $this->withoutAnswers();
+
         $question = $this->getDoctrine()
             ->getRepository(Question::class)
             ->getAll();
-
         if(!$question) {
-            return $this->json("Brak pytań", 202);
+            $question = "Brak pytań.";
         }
 
-        return $this->json($question, 201);
+        return $this->json([
+            'question' => $question,
+            'withoutAnswers' => $withoutAnswers
+        ], 201);
     }
 
     /**
@@ -37,8 +41,7 @@ class DefaultController extends AbstractController
      */
     public function settings(): JsonResponse
     {
-        // TODO
-        return $this->json("settings");
+        return $this->json("settings",201);
     }
 
     /**
@@ -48,23 +51,24 @@ class DefaultController extends AbstractController
      */
     public function user(int $user_id): JsonResponse
     {
-        if ($user_id < 0) {
-            return $this->json("Nie udało się odnaleźć użytkownika", 202);
-        }
-
         $user = $this->getDoctrine()
             ->getRepository(User::class)
             ->getById($user_id);
-
         if(!$user) {
-            return $this->json("Nie udało się odnaleźć użytkownika", 202);
+            $user = "Nie udało się odnaleźć użytkownika.";
         }
 
         $question = $this->getDoctrine()
             ->getRepository(Question::class)
             ->getByUserId($user_id);
+        if (!$question) {
+            $question = "Użytkownik o nic nie pytał.";
+        }
 
-        return $this->json(['user' => $user, 'question' => $question], 201);
+        return $this->json([
+            'user' => $user,
+            'question' => $question
+        ], 201);
     }
 
     /**
@@ -74,23 +78,27 @@ class DefaultController extends AbstractController
      */
     public function question(int $question_id): JsonResponse
     {
-        if ($question_id < 0) {
-            return $this->json("Nie udało się odnaleźć pytania", 202);
-        }
-
         $question = $this->getDoctrine()
             ->getRepository(Question::class)
             ->getById($question_id);
+        if(!$question) {
+            $question = "Nie ma takiego pytania.";
+        }
+
+        if(!$question) {
+            return $this->json([
+                'message' => $question,
+            ], 202);
+        }
 
         $answers = $this->getDoctrine()
             ->getRepository(Answer::class)
             ->getByQuestionId($question_id);
 
-        if(!$question) {
-            return $this->json("Nie udało się odnaleźć pytania", 202);
-        }
-
-        return $this->json(['question' => $question, 'answers' => $answers], 201);
+        return $this->json([
+            'question' => $question,
+            'answers' => $answers,
+        ], 201);
     }
 
     /**
@@ -99,8 +107,7 @@ class DefaultController extends AbstractController
      */
     public function addQuestion(): JsonResponse
     {
-        // TODO
-        return $this->json("add_question");
+        return $this->json("addQuestion", 201);
     }
 
     /**
@@ -109,7 +116,7 @@ class DefaultController extends AbstractController
      */
     public function loginPage(): JsonResponse
     {
-        return $this->json("login page");
+        return $this->json("login page", 201);
     }
 
     /**
@@ -118,6 +125,17 @@ class DefaultController extends AbstractController
      */
     public function registerPage(): JsonResponse
     {
-        return $this->json("register page");
+        return $this->json("register page", 201);
+    }
+
+    public function withoutAnswers(){
+        $withoutAnswers = $this->getDoctrine()
+            ->getRepository(Question::class)
+            ->getWithoutAnswers();
+        if(!$withoutAnswers)
+        {
+            $withoutAnswers = "Brak pytań bez odpowiedzi.";
+        }
+        return $withoutAnswers;
     }
 }

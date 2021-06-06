@@ -18,7 +18,7 @@ class WindowMain extends React.Component {
         this.setState({isLoaded: false})
         try {
             const res = await axios.get('https://localhost:8000/')
-            this.setState({data: res.data})
+            this.setState({data: res.data.question})
             this.questions = this.state.data.map(function (item) {
                 return <li key={item.id}>
                     <NavLink to={'/question/'+item.id}

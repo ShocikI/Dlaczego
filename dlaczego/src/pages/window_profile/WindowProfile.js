@@ -45,7 +45,7 @@ class WindowProfile extends React.Component {
                 (this.state.isLoaded) ?
                 <div className={styles.standard}>
                     <h1>{this.state.user.login}</h1>
-                    <h2>Data dołączenia: {this.state.user.created_at}</h2>
+                    <h2>Data dołączenia: {this.state.user.created_at.substr(0,10)}</h2>
                     {
                         this.state.user.admin ?
                             <h2 className={styles.admin}>Admin</h2> :

@@ -50,11 +50,11 @@ class QuestionRepository extends ServiceEntityRepository
         $entityManager = $this->getEntityManager();
 
         $query = $entityManager->createQuery('
-            SELECT q.id, q.content 
-            FROM App\Entity\Question q
-            JOIN q.userId a
-            WHERE q.id = a.question_id_id
-            ORDER BY q.id ASC
+            SELECT q.id, q.content
+            FROM App\Entity\Question q           
+            WHERE q.id NOT IN (SELECT
+            DISTINCT(a.questionId)
+            FROM App\Entity\Answer a)
         ');
 
         return $query->getArrayResult();

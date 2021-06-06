@@ -32,6 +32,7 @@ class AnswerRepository extends ServiceEntityRepository
             WHERE a.questionId = :id
             ORDER BY a.created_at ASC
         ')->setParameter("id", $id);
+
         return $query->getArrayResult();
     }
 

@@ -17,7 +17,7 @@ class AnswerFrame extends React.Component {
                             <h2 className={styles.admin}>Admin</h2> :
                             <h2>User</h2>
                     }
-                    <h2>{this.props.data.created_at}</h2>
+                    <h2>{this.props.data.created_at.substr(0,10)}</h2>
                 </div>
                 <div className={styles.content}>
                     <h1>{this.props.data.content}</h1>
