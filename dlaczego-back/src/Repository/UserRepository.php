@@ -20,6 +20,19 @@ class UserRepository extends ServiceEntityRepository
         parent::__construct($registry, User::class);
     }
 
+    public function getById($id) {
+        $entityManager = $this->getEntityManager();
+
+        $query = $entityManager->createQuery('
+            SELECT u.login, ud.created_at, ud.admin, ud.description
+            FROM App\Entity\User u
+            JOIN u.userDetails ud
+            WHERE u.id = :id
+        ')->setParameter('id', $id);
+
+        return $query->getArrayResult();
+    }
+
     // /**
     //  * @return User[] Returns an array of User objects
     //  */

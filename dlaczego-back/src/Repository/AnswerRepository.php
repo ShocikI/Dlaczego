@@ -24,7 +24,7 @@ class AnswerRepository extends ServiceEntityRepository
         $entityManager = $this->getEntityManager();
 
         $query = $entityManager->createQuery('
-            SELECT a.id, a.content,
+            SELECT a.id, a.content, u.id as userId,
             u.login, ud.created_at, ud.admin
             FROM App\Entity\Answer a
             JOIN a.userId u

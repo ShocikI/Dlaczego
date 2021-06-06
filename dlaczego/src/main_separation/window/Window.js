@@ -20,7 +20,7 @@ class Window extends React.Component {
                         <Route exact path="/"
                                component={WindowMain}
                         />
-                        <Route path="/profile"
+                        <Route path="/user/:id"
                                component={WindowProfile}
                         />
                         <Route path="/settings"

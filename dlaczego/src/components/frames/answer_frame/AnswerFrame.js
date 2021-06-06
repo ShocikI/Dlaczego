@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from '../standardframe.module.sass'
+import {NavLink} from "react-router-dom";
 
 class AnswerFrame extends React.Component {
 
@@ -7,10 +8,13 @@ class AnswerFrame extends React.Component {
         return(
             <div className={styles.standard}>
                 <div className={styles.user}>
-                    <h1>{this.props.data.login}</h1>
+                    <NavLink to={'/user/'+this.props.data.userId}
+                             className={styles.links}>
+                        {this.props.data.login}
+                    </NavLink>
                     {
                         this.props.data.admin ?
-                            <h2>Admin</h2> :
+                            <h2 className={styles.admin}>Admin</h2> :
                             <h2>User</h2>
                     }
                     <h2>{this.props.data.created_at}</h2>

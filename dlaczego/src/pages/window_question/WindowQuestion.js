@@ -49,7 +49,6 @@ class WindowQuestion extends React.Component{
                     <QuestionFrame data={this.state.question}/>
                     <ul>
                         {this.state.answer.map(function(item) {
-                            console.log(item)
                             return <li key={item.id}>
                                 <AnswerFrame data={item}/>
                             </li>

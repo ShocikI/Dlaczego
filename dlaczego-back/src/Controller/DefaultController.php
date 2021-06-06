@@ -41,26 +41,31 @@ class DefaultController extends AbstractController
         return $this->json("settings");
     }
 
-//    /**
-//     * @Route("/profile/{user}", name="profile", methods={"GET"})
-//     * @param string $login
-//     * @return JsonResponse
-//     */
-//    public function profile(string $login): JsonResponse
-//    {
-//        $uRepo = $this->get(UserRepository::class);
-//        $user = $uRepo->findOneBy($login, );
-//        $userD = $user->getUserDetails();
-//
-//        return $this->json([
-//            $user->getLogin(),
-//            $userD[1],
-//            $userD[2],
-//            $userD[3],
-//            $user->getQuestions()
-//        ]);
-//        return $this->json("profile");
-//    }
+    /**
+     * @Route("/user/{user_id}", name="user", methods={"GET"})
+     * @param int $user_id
+     * @return JsonResponse
+     */
+    public function user(int $user_id): JsonResponse
+    {
+        if ($user_id < 0) {
+            return $this->json("Nie udało się odnaleźć użytkownika", 202);
+        }
+
+        $user = $this->getDoctrine()
+            ->getRepository(User::class)
+            ->getById($user_id);
+
+        if(!$user) {
+            return $this->json("Nie udało się odnaleźć użytkownika", 202);
+        }
+
+        $question = $this->getDoctrine()
+            ->getRepository(Question::class)
+            ->getByUserId($user_id);
+
+        return $this->json(['user' => $user, 'question' => $question], 201);
+    }
 
     /**
      * @Route("/question/{question_id}", name="question", methods={"GET"})
@@ -85,10 +90,7 @@ class DefaultController extends AbstractController
             return $this->json("Nie udało się odnaleźć pytania", 202);
         }
 
-        return $this->json([
-            'question' => $question,
-            'answers' => $answers
-            ], 201);
+        return $this->json(['question' => $question, 'answers' => $answers], 201);
     }
 
     /**

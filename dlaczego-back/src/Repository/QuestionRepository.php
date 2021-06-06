@@ -36,8 +36,7 @@ class QuestionRepository extends ServiceEntityRepository
         $entityManager = $this->getEntityManager();
 
         $query = $entityManager->createQuery('
-            SELECT q.id, q.content,
-            u.login, ud.created_at, ud.admin
+            SELECT q.id, q.content, u.id as userId, u.login, ud.created_at, ud.admin
             FROM App\Entity\Question q 
             JOIN q.userId u
             JOIN u.userDetails ud
@@ -53,10 +52,22 @@ class QuestionRepository extends ServiceEntityRepository
         $query = $entityManager->createQuery('
             SELECT q.id, q.content 
             FROM App\Entity\Question q
-            JOIN App\Entity\Answer a
+            JOIN q.userId a
             WHERE q.id = a.question_id_id
             ORDER BY q.id ASC
         ');
+
+        return $query->getArrayResult();
+    }
+
+    public function getByUserId($id) {
+        $entityManager = $this->getEntityManager();
+
+        $query = $entityManager->createQuery('
+            SELECT q.id, q.content 
+            FROM App\Entity\Question q
+            WHERE q.userId = :id
+        ')->setParameter('id', $id);
 
         return $query->getArrayResult();
     }

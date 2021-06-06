@@ -12,7 +12,7 @@ function NavLinks() {
                     >Strona główna</NavLink>
                 </li>
                 <li>
-                    <NavLink to="/profile"
+                    <NavLink to="/user/:id"
                              className={styles.links}
                     >Profil</NavLink>
                 </li>
