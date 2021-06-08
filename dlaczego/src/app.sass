@@ -42,7 +42,6 @@ body
 
 #root
   width: 100%
-  height: 2000px
   font-family: $poppins
 
 a
@@ -51,3 +50,17 @@ a
 
 button
   cursor: pointer
+
+@media (max-width: 640px)
+  .App
+    display: flex
+    flex-direction: column
+
+  .SearchBarImitation
+    display: none
+
+  .NavBarImitation
+    display: none
+
+  .SideBarImitation
+    display: none

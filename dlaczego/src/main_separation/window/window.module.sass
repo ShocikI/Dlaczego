@@ -7,11 +7,18 @@
   justify-content: flex-start
   width: 100%
 
+
   .standard
     width: 50vw
     height: auto
     background: $theme
     color: $twhite
-    padding: 2rem
+    padding: 1.5rem 2rem
     margin: 2rem 0
-    box-sizing: border-box
+    box-shadow: 5px 5px 7.5px rgba(0, 0, 0, 0.15)
+
+@media (max-width: 640px)
+  .flex
+    .standard
+      margin: 3.5rem 0
+      width: 90vw

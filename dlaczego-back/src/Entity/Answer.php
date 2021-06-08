@@ -39,6 +39,7 @@ class Answer
 
     /**
      * @ORM\ManyToOne(targetEntity=Question::class, inversedBy="answers")
+     * @ORM\JoinColumn(nullable=false)
      */
     private $questionId;
 

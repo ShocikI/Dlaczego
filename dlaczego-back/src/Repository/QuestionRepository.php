@@ -19,6 +19,59 @@ class QuestionRepository extends ServiceEntityRepository
         parent::__construct($registry, Question::class);
     }
 
+    public function getAll()
+    {
+        $entityManager = $this->getEntityManager();
+
+        $query = $entityManager->createQuery('
+            SELECT q.id, q.content 
+            FROM App\Entity\Question q 
+            ORDER BY q.id DESC
+        ');
+        return $query->getArrayResult();
+    }
+
+    public function getById($id)
+    {
+        $entityManager = $this->getEntityManager();
+
+        $query = $entityManager->createQuery('
+            SELECT q.id, q.content, u.id as userId, u.login, ud.created_at, ud.admin
+            FROM App\Entity\Question q 
+            JOIN q.userId u
+            JOIN u.userDetails ud
+            WHERE q.id = :id
+        ')->setParameter('id', $id);
+        return $query->getArrayResult();
+    }
+
+    public function getWithoutAnswers()
+    {
+        $entityManager = $this->getEntityManager();
+
+        $query = $entityManager->createQuery('
+            SELECT q.id, q.content
+            FROM App\Entity\Question q           
+            WHERE q.id NOT IN (SELECT
+            DISTINCT(a.questionId)
+            FROM App\Entity\Answer a)
+        ');
+
+        return $query->getArrayResult();
+    }
+
+    public function getByUserId($id) {
+        $entityManager = $this->getEntityManager();
+
+        $query = $entityManager->createQuery('
+            SELECT q.id, q.content 
+            FROM App\Entity\Question q
+            WHERE q.userId = :id
+        ')->setParameter('id', $id);
+
+        return $query->getArrayResult();
+    }
+
     // /**
     //  * @return Question[] Returns an array of Question objects
     //  */

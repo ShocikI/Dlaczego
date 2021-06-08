@@ -1,0 +1,38 @@
+@import '../../../assets/styles/colors'
+@import '../../../assets/styles/border'
+
+.standard
+  display: flex
+  flex-direction: column
+  justify-content: flex-start
+  align-items: flex-start
+
+  h2
+    color: $twhite
+    font-size: 0.8rem
+    font-weight: 700
+
+.flex
+  display: flex
+  flex-direction: column
+  justify-content: flex-start
+  align-items: flex-start
+
+  li
+    margin-top: 0.4rem
+    list-style-type: circle
+
+
+.links
+  color: $twhite
+  font-size: 0.65rem
+  font-weight: 500
+
+
+@media (max-width: 640px)
+  .standard
+    width: 0
+    display: none
+
+  .flex
+    display: none
